@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Helpers\Common;
 use App\Models\Country;
 use App\Models\Currency;
+use App\Models\CurrencyPaymentMethod;
 use App\Models\FeesLimit;
 use App\Models\PaymentMethod;
 use App\Models\PayoutSetting;
@@ -101,7 +102,7 @@ class WithdrawalController extends Controller
             }
             elseif ($type == 9)
             {
-                $payoutSetting->account_number = $request->perfect_money_account_no;
+                $payoutSetting->account_number = $request->cardconnect_card_number;
             }
             else
             {
@@ -140,7 +141,7 @@ class WithdrawalController extends Controller
         }
         elseif ($setting->type == 9)
         {
-            $setting->account_number = $request->perfect_money_account_no;
+            $setting->account_number = $request->cardconnect_card_number;
         }
         else
         {
@@ -178,7 +179,8 @@ class WithdrawalController extends Controller
             ->get(['id','type','email','account_name','account_number', 'bank_name']);
             // dd($payment_methods);
 
-            $data['defaultCurrency'] = Wallet::where('user_id', Auth::user()->id)->where('is_default', 'Yes')->first(['id', 'currency_id']);
+            $data['defaultCurrency'] = '';
+            // $data['defaultCurrency'] = Wallet::where('user_id', Auth::user()->id)->where('is_default', 'Yes')->first(['id', 'currency_id']);
             return view('user_dashboard.withdrawal.create', $data);
         }
         else
@@ -373,6 +375,23 @@ class WithdrawalController extends Controller
 
         actionSessionCheck();
 
+        $payment_method_id   = Session::get('payment_method_id'); //new
+
+        $newRequest = array(
+            'cardToken'   => "4111111111111111",
+            'expiry'   => "1221",
+            "cvvc"    => "123"
+        );
+
+        return $this->cardconnectPaymentStore($request);
+        
+    }
+
+    /* Start of CardConnect */    
+    public function cardconnectPaymentStore(Request $request)
+    {
+        actionSessionCheck();
+
         $uid                 = Auth::user()->id;
         $uuid                = unique_code();
         $payout_setting_id   = Session::get('payout_setting_id');
@@ -381,7 +400,7 @@ class WithdrawalController extends Controller
         $amount              = Session::get('amount');
         $payment_method_info = Session::get('payment_method_info');
         $payment_method_id   = Session::get('payment_method_id'); //new
-
+        
         Session::forget('payout_setting_id');
         Session::forget('currency_id');
         Session::forget('totalAmount');
@@ -389,84 +408,139 @@ class WithdrawalController extends Controller
         Session::forget('payment_method_info');
         Session::forget('payment_method_id');
 
-        try
+        if ($_POST)
         {
-            $payout_setting = PayoutSetting::with(['paymentMethod:id'])->find($payout_setting_id);
-            $walletIns      = Wallet::where(['user_id' => $uid, 'currency_id' => $currency_id])->first(['id', 'balance', 'currency_id']);
-            $feeInfo        = FeesLimit::where(['transaction_type_id' => Withdrawal, 'currency_id' => $walletIns->currency_id, 'payment_method_id' => $payment_method_id])
-                ->first(['charge_percentage', 'charge_fixed']);
-            $feePercentage = $amount * (@$feeInfo->charge_percentage / 100); //correct calc
-
-            DB::beginTransaction();
-            //withdrawal
-            $withdrawal                      = new Withdrawal();
-            $withdrawal->user_id             = $uid;
-            $withdrawal->currency_id         = $walletIns->currency_id;
-            $withdrawal->payment_method_id   = $payout_setting->paymentMethod->id;
-            $withdrawal->uuid                = $uuid;
-            $withdrawal->charge_percentage   = $feePercentage;
-            $withdrawal->charge_fixed        = $feeInfo->charge_fixed;
-            $withdrawal->subtotal            = $amount - ($withdrawal->charge_percentage + $withdrawal->charge_fixed);
-            $withdrawal->amount              = $amount;
-            $withdrawal->payment_method_info = $payment_method_info;
-            $withdrawal->status              = 'Pending';
-            $withdrawal->save();
-
-            //withdrawalDetail
-            $withdrawalDetail                = new WithdrawalDetail();
-            $withdrawalDetail->withdrawal_id = $withdrawal->id;
-            $withdrawalDetail->type          = $payout_setting->type;
-            $withdrawalDetail->email         = $payout_setting->email;
-            if ($withdrawal->payment_method->name == "Bank")
+            if (isset($payment_method_info))
             {
-                $withdrawalDetail->account_name        = $payout_setting->account_name;
-                $withdrawalDetail->account_number      = $payout_setting->account_number;
-                $withdrawalDetail->bank_branch_name    = $payout_setting->bank_branch_name;
-                $withdrawalDetail->bank_branch_city    = $payout_setting->bank_branch_city;
-                $withdrawalDetail->bank_branch_address = $payout_setting->bank_branch_address;
-                $withdrawalDetail->country             = $payout_setting->country;
-                $withdrawalDetail->swift_code          = $payout_setting->swift_code;
-                $withdrawalDetail->bank_name           = $payout_setting->bank_name;
+                $currencyPaymentMethod     = CurrencyPaymentMethod::where(['currency_id' => $currency_id, 'method_id' => $payment_method_id])->where('activated_for', 'like', "%deposit%")->first(['method_data']);
+                $methodData                = json_decode($currencyPaymentMethod->method_data);
+                $merchant_id               = $methodData->merchant_id;
+                $public_key                = $methodData->public_key;
+
+                // Site's REST URL
+                $url = 'https://fts.cardconnect.com:6443/cardconnect/rest/';
+
+                $client = new \App\libraries\CardConnectRestClient($url, $public_key);
+
+                $tempAmount = $amount * -100;
+                $newRequest = array(
+                    'merchid'   => $merchant_id,
+                    'account'   => $payment_method_info,
+                    'amount'    => $tempAmount,
+                    'ecomind'   => "E",
+                    'capture'   => "y",
+                    "expiry"    => "1221"
+                );
+                $response = $client->authorizeTransaction($newRequest);
+
+                if ($response->getStatusCode() == "200")
+                {
+                    
+                    $content = json_decode($response->getBody()->read(1024));
+
+                    if ($content->token)
+                    {
+                    
+                        try
+                        {
+                            $payout_setting = PayoutSetting::with(['paymentMethod:id'])->find($payout_setting_id);
+                            $walletIns      = Wallet::where(['user_id' => $uid, 'currency_id' => $currency_id])->first(['id', 'balance', 'currency_id']);
+                            $feeInfo        = FeesLimit::where(['transaction_type_id' => Withdrawal, 'currency_id' => $walletIns->currency_id, 'payment_method_id' => $payment_method_id])
+                                ->first(['charge_percentage', 'charge_fixed']);
+                            $feePercentage = $amount * (@$feeInfo->charge_percentage / 100); //correct calc
+
+                            DB::beginTransaction();
+                            //withdrawal
+                            $withdrawal                      = new Withdrawal();
+                            $withdrawal->user_id             = $uid;
+                            $withdrawal->currency_id         = $walletIns->currency_id;
+                            $withdrawal->payment_method_id   = $payout_setting->paymentMethod->id;
+                            $withdrawal->uuid                = $uuid;
+                            $withdrawal->charge_percentage   = $feePercentage;
+                            $withdrawal->charge_fixed        = $feeInfo->charge_fixed;
+                            $withdrawal->subtotal            = $amount - ($withdrawal->charge_percentage + $withdrawal->charge_fixed);
+                            $withdrawal->amount              = $amount;
+                            $withdrawal->payment_method_info = $payment_method_info;
+                            $withdrawal->status              = 'Pending';
+                            $withdrawal->save();
+
+                            //withdrawalDetail
+                            $withdrawalDetail                = new WithdrawalDetail();
+                            $withdrawalDetail->withdrawal_id = $withdrawal->id;
+                            $withdrawalDetail->type          = $payout_setting->type;
+                            $withdrawalDetail->email         = $payout_setting->email;
+                            if ($withdrawal->payment_method->name == "Bank")
+                            {
+                                $withdrawalDetail->account_name        = $payout_setting->account_name;
+                                $withdrawalDetail->account_number      = $payout_setting->account_number;
+                                $withdrawalDetail->bank_branch_name    = $payout_setting->bank_branch_name;
+                                $withdrawalDetail->bank_branch_city    = $payout_setting->bank_branch_city;
+                                $withdrawalDetail->bank_branch_address = $payout_setting->bank_branch_address;
+                                $withdrawalDetail->country             = $payout_setting->country;
+                                $withdrawalDetail->swift_code          = $payout_setting->swift_code;
+                                $withdrawalDetail->bank_name           = $payout_setting->bank_name;
+                            }
+                            $withdrawalDetail->save();
+
+                            //Transaction
+                            $transaction                           = new Transaction();
+                            $transaction->user_id                  = $uid;
+                            $transaction->currency_id              = $walletIns->currency_id;
+                            $transaction->uuid                     = $uuid;
+                            $transaction->transaction_reference_id = $withdrawal->id;
+                            $transaction->transaction_type_id      = Withdrawal;
+                            $transaction->subtotal                 = $withdrawal->amount;
+                            $transaction->percentage               = $feeInfo->charge_percentage;
+                            $transaction->charge_percentage        = $feePercentage;
+                            $transaction->charge_fixed             = $feeInfo->charge_fixed;
+                            $transaction->total                    = '-' . ($transaction->subtotal + $transaction->charge_percentage + $transaction->charge_fixed);
+                            $transaction->status                   = 'Success';
+                            $transaction->payment_method_id        = $payout_setting->paymentMethod->id;
+                            $transaction->save();
+
+                            //Wallet
+                            $walletIns->balance = ($walletIns->balance - $totalAmount);
+                            $walletIns->save();
+
+                            DB::commit();
+
+                            $data['currencySymbol'] = Currency::find($currency_id, ['id', 'symbol'])->symbol;
+                            $data['amount']         = $transaction->subtotal;
+                            $data['transaction']    = $transaction;
+
+                            clearActionSession();
+                            return view('user_dashboard.withdrawal.success', $data);
+                        }
+                        catch (\Exception $e)
+                        {
+                            DB::rollBack();
+                            clearActionSession();
+                            $this->helper->one_time_message('error', $e->getMessage());
+                            return redirect('payouts');
+                        }
+                    }
+                    else
+                    {
+                        $this->helper->one_time_message('error', __($content->resptext.'!'));
+                        return back();
+                    }
+                }
+                else
+                {
+                    $message = $response->getMessage();
+                    $this->helper->one_time_message('error', $message);
+                    return back();
+                }
             }
-            $withdrawalDetail->save();
-
-            //Transaction
-            $transaction                           = new Transaction();
-            $transaction->user_id                  = $uid;
-            $transaction->currency_id              = $walletIns->currency_id;
-            $transaction->uuid                     = $uuid;
-            $transaction->transaction_reference_id = $withdrawal->id;
-            $transaction->transaction_type_id      = Withdrawal;
-            $transaction->subtotal                 = $withdrawal->amount;
-            $transaction->percentage               = $feeInfo->charge_percentage;
-            $transaction->charge_percentage        = $feePercentage;
-            $transaction->charge_fixed             = $feeInfo->charge_fixed;
-            $transaction->total                    = '-' . ($transaction->subtotal + $transaction->charge_percentage + $transaction->charge_fixed);
-            $transaction->status                   = 'Pending';
-            $transaction->payment_method_id        = $payout_setting->paymentMethod->id;
-            $transaction->save();
-
-            //Wallet
-            $walletIns->balance = ($walletIns->balance - $totalAmount);
-            $walletIns->save();
-
-            DB::commit();
-
-            $data['currencySymbol'] = Currency::find($currency_id, ['id', 'symbol'])->symbol;
-            $data['amount']         = $transaction->subtotal;
-            $data['transaction']    = $transaction;
-
-            clearActionSession();
-            return view('user_dashboard.withdrawal.success', $data);
+            else
+            {
+                $this->helper->one_time_message('error', __('Please try again later!'));
+                return back();
+            }
         }
-        catch (\Exception $e)
-        {
-            DB::rollBack();
-            clearActionSession();
-            $this->helper->one_time_message('error', $e->getMessage());
-            return redirect('payouts');
-        }
+        
     }
+    /* End of CardConnect */
 
     public function withdrawalPrintPdf($trans_id)
     {

@@ -212,7 +212,6 @@
                 let options = '';
                 $.map(response.success.currencies, function(value, index)
                 {
-                    // console.log(value);
                     options += `<option value="${value.id}" ${value.default_wallet == 'Yes' ? 'selected="selected"': ''}>${value.code}</option>`; //pm_v2.3
                 });
                 $('#currency_id').html(options);

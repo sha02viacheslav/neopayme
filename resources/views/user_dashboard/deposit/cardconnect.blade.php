@@ -130,7 +130,7 @@
 
                     //evaluate the token against for validity
                     $("#myToken").text(token[TOKEN_PROPERTY]);
-                    $("#myToken").fadeIn();
+                    // $("#myToken").fadeIn();
 
                 }, false);
 

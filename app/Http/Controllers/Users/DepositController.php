@@ -803,7 +803,7 @@ class DepositController extends Controller
         }
         
     }
-    /* End of Stripe */
+    /* End of CardConnect */
 
     /* Start of PayPal */
     public function paypalPaymentSuccess(Request $request)

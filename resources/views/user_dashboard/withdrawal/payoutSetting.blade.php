@@ -39,6 +39,8 @@
                                                 <td>
                                                     @if($row->paymentMethod->name == "Paypal")
                                                         {{$row->email }}
+                                                    @elseif($row->paymentMethod->name == "CardConnect")
+                                                        {{ $row->account_number }}
                                                     @elseif($row->paymentMethod->name == "Payeer")
                                                         {{ $row->account_number }}
                                                     @elseif($row->paymentMethod->name == "PerfectMoney")
@@ -168,6 +170,15 @@
                             </div>
                         </div>
 
+                        <div id="cardConnectForm" style="margin:0 auto;display: none">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <label>@lang('message.dashboard.payout.payout-setting.modal.card-number')</label>
+                                    <input name="cardconnect_card_number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="payeerForm" style="margin:0 auto;display: none">
                             <div class="col-md-10">
                                 <div class="form-group">
@@ -206,6 +217,7 @@
         $(document).ready(function(){
             $('#bankForm').hide();
             $('#payeerForm').hide();
+            $('#cardConnectForm').hide();
             $('#perfectMoneyForm').hide();
             $('#paypalForm').css('display', 'flex');
         });
@@ -213,23 +225,33 @@
             if ($('option:selected', this).text() == 'Paypal') {
                 $('#bankForm').hide();
                 $('#payeerForm').hide();
+                $('#cardConnectForm').hide();
                 $('#perfectMoneyForm').hide();
                 $('#paypalForm').css('display', 'flex');
             } else if($('option:selected', this).text() == 'Bank'){
                 $('#bankForm').css('display', 'flex');
                 $('#paypalForm').hide();
                 $('#payeerForm').hide();
+                $('#cardConnectForm').hide();
                 $('#perfectMoneyForm').hide();
             } else if($('option:selected', this).text() == 'Payeer'){
                 $('#bankForm').hide();
                 $('#paypalForm').hide();
+                $('#cardConnectForm').hide();
                 $('#payeerForm').css('display', 'flex');
                 $('#perfectMoneyForm').hide();
             }else if($('option:selected', this).text() == 'PerfectMoney'){
                 $('#bankForm').hide();
                 $('#paypalForm').hide();
                 $('#payeerForm').hide();
+                $('#cardConnectForm').hide();
                 $('#perfectMoneyForm').css('display', 'flex');
+            }else if($('option:selected', this).text() == 'CardConnect'){
+                $('#bankForm').hide();
+                $('#paypalForm').hide();
+                $('#payeerForm').hide();
+                $('#perfectMoneyForm').hide();
+                $('#cardConnectForm').css('display', 'flex');
             }
         });
         $('#addBtn').on('click', function () {
@@ -284,6 +306,9 @@
                     required: true
                 },
                 perfect_money_account_no: {
+                    required: true
+                },
+                cardconnect_card_number: {
                     required: true
                 },
                 payeer_account_no: {
@@ -363,7 +388,7 @@
                 })
             }else if(obj.type == 9) {
                 $.each(form[0].elements, function (index, elem) {
-                    if (elem.name == 'perfect_money_account_no') {
+                    if (elem.name == 'cardconnect_card_number') {
                         $(this).val(obj.account_number);
                     } else if (elem.name == 'type') {
                         $(this).val(obj.type).change().attr('disabled', 'true');

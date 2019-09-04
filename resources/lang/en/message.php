@@ -554,6 +554,7 @@ return [
                     'attached-file'                => 'Attached File',
                     'country'                      => 'Country',
                     'perfect-money-account-number' => 'Perfect Money Account Number',
+                    'card-number' => 'Card Number',
                     'payeer-account-number'        => 'Payeer Account Number',
                 ],
             ],
