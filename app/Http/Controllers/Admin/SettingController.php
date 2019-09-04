@@ -803,6 +803,38 @@ class SettingController extends Controller
                 return redirect('admin/settings/payment_methods');
             }
         }
+        else if ($_POST['gateway'] == 'cardConnect')
+        {
+            $rules = array(
+                'merchant_id' => 'required',
+                'public_key' => 'required',
+            );
+
+            $fieldNames = array(
+                'merchant_id' => 'Merchant Key',
+                'public_key' => 'Public Key',
+            );
+
+            $validator = Validator::make($request->all(), $rules);
+            $validator->setAttributeNames($fieldNames);
+
+            if ($validator->fails())
+            {
+                return back()->withErrors($validator)->withInput();
+            }
+            else
+            {
+                // changeEnvironmentVariable('COIN_PAYMENT_MARCHANT_ID', $request->merchant_id);
+                // changeEnvironmentVariable('COIN_PAYMENT_PRIVATE_KEY', $request->private_key);
+                // changeEnvironmentVariable('COIN_PAYMENT_PUBLIC_KEY', $request->public_key);
+
+                Setting::where(['name' => 'merchant_id', 'type' => 'Cardconnect'])->update(['value' => $request->merchant_id]);
+                Setting::where(['name' => 'public_key', 'type' => 'Cardconnect'])->update(['value' => $request->public_key]);
+
+                $this->helper->one_time_message('success', 'Payment Method Settings Updated Successfully');
+                return redirect('admin/settings/payment_methods');
+            }
+        }
     }
 
     // preference - form

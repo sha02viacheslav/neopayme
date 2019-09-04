@@ -436,6 +436,10 @@ Route::group(['middleware' => ['guest:users', 'locale', 'twoFa'], 'namespace' =>
         Route::get('deposit/stripe_payment', 'DepositController@stripePayment');
         Route::post('deposit/stripe_payment_store', 'DepositController@stripePaymentStore');
 
+        //Cardconnect
+        Route::get('deposit/cardconnect_payment', 'DepositController@cardconnetPayment');
+        Route::post('deposit/cardconnect_payment_store', 'DepositController@cardconnectPaymentStore');
+
         //2Checkout
         Route::get('deposit/checkout/payment', 'DepositController@checkoutPayment');
         Route::get('deposit/checkout/payment/success', 'DepositController@checkoutPaymentStore');

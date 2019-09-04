@@ -184,6 +184,7 @@ class DepositMoneyController extends Controller
     //Get Stripe Info
     public function getStripeInfo()
     {
+        exit;
         $currencyPaymentMethod = CurrencyPaymentMethod::where(['currency_id' => request('currency_id'), 'method_id' => request('method_id')])
             ->where('activated_for', 'like', "%deposit%")
             ->first(['method_data']);

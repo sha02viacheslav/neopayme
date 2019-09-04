@@ -51,6 +51,10 @@ class CurrencyPaymentMethodController extends Controller
         {
             $tab = 'CoinPayments';
         }
+        elseif ($tab == 'cardConnect')
+        {
+            $tab = 'CardConnect';
+        }
         elseif ($tab == 'mts')
         {
             $tab = 'Mts';
@@ -157,6 +161,18 @@ class CurrencyPaymentMethodController extends Controller
             {
                 $currencyPaymentMethod->method_data = json_encode($request->coinPayments);
                 if (isset($request->coinPayments_status) && $request->coinPayments_status == 'Active')
+                {
+                    $currencyPaymentMethod->activated_for = json_encode(['deposit' => '']);
+                }
+                else
+                {
+                    $currencyPaymentMethod->activated_for = json_encode(['' => '']);
+                }
+            }
+            elseif (!empty($request->cardConnect))
+            {
+                $currencyPaymentMethod->method_data = json_encode($request->cardConnect);
+                if (isset($request->cardConnect_status) && $request->cardConnect_status == 'Active')
                 {
                     $currencyPaymentMethod->activated_for = json_encode(['deposit' => '']);
                 }
@@ -277,6 +293,18 @@ class CurrencyPaymentMethodController extends Controller
             {
                 $currencyPaymentMethod->method_data = json_encode($request->coinPayments);
                 if (isset($request->coinPayments_status) && $request->coinPayments_status == 'Active')
+                {
+                    $currencyPaymentMethod->activated_for = json_encode(['deposit' => '']);
+                }
+                else
+                {
+                    $currencyPaymentMethod->activated_for = json_encode(['' => '']);
+                }
+            }
+            elseif (!empty($request->cardConnect))
+            {
+                $currencyPaymentMethod->method_data = json_encode($request->cardConnect);
+                if (isset($request->cardConnect_status) && $request->cardConnect_status == 'Active')
                 {
                     $currencyPaymentMethod->activated_for = json_encode(['deposit' => '']);
                 }

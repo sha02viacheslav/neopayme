@@ -465,6 +465,18 @@ class DepositController extends Controller
                 Session::put('payeer_merchant_domain', $payeer->merchant_domain);
                 return redirect('deposit/payeer/payment');
             }
+            else if ($method == 'Cardconnect')
+            {
+                // $trx['amountTotal'] = $amount;
+                // $trx['payload']     = [
+                //     'type'     => 'deposit',
+                //     'currency' => $currency->code,
+                // ];
+                // $publishable = $methodData->publishable_key;
+                $publishable = $amount;
+                Session::put('publishable', $publishable);
+                return redirect('deposit/cardconnect_payment');
+            }
             // elseif ($method == 'Perfectmoney')
             // {
             //     $transInfo = Session::get('transInfo');
@@ -631,6 +643,165 @@ class DepositController extends Controller
                 return back();
             }
         }
+    }
+    /* End of Stripe */
+
+    /* Start of CardConnect */
+    public function cardconnetPayment()
+    {
+        $data['menu']              = 'deposit';
+        $data['amount']            = Session::get('amount');
+        $data['payment_method_id'] = $method_id = Session::get('payment_method_id');
+        $data['content_title']     = 'Deposit';
+        $data['icon']              = 'university';
+        $sessionValue              = session('transInfo');
+        $currencyId                = $sessionValue['currency_id'];
+        $currencyPaymentMethod     = CurrencyPaymentMethod::where(['currency_id' => $currencyId, 'method_id' => $method_id])->where('activated_for', 'like', "%deposit%")->first(['method_data']);
+        $methodData                = json_decode($currencyPaymentMethod->method_data);
+        $data['merchant_id']       = $methodData->merchant_id;
+        $data['public_key']        = $methodData->public_key;
+        return view('user_dashboard.deposit.cardconnect', $data);
+    }
+    
+    public function cardconnectPaymentStore(Request $request)
+    {
+        actionSessionCheck();
+
+        $validation = Validator::make($request->all(), [
+            'cardToken' => 'required',
+            'expiry' => 'required',
+            'cvvc' => 'required'
+        ]);
+        if ($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation->errors());
+        }
+
+        $payment_method_id         = Session::get('payment_method_id');
+        $amount                    = Session::get('amount');
+        $sessionValue              = session('transInfo');
+        $currencyId                = $sessionValue['currency_id'];
+        $user_id                   = Auth::user()->id;
+        $wallet                    = Wallet::where(['currency_id' => $sessionValue['currency_id'], 'user_id' => $user_id])->first(['id', 'currency_id']);
+
+        // dd($wallet);
+        if (empty($wallet))
+        {
+            $walletInstance              = new Wallet();
+            $walletInstance->user_id     = $user_id;
+            $walletInstance->currency_id = $sessionValue['currency_id'];
+            $walletInstance->balance     = 0.00000000;
+            $walletInstance->is_default  = 'No';
+            $walletInstance->save();
+        }
+        // dd($walletInstance->currency_id);
+        $currencyId = isset($wallet->currency_id) ? $wallet->currency_id : $walletInstance->currency_id;
+        $currency   = Currency::find($currencyId, ['id', 'code']);
+
+        if ($_POST)
+        {
+            if (isset($request->cardToken))
+            {
+                $currencyPaymentMethod     = CurrencyPaymentMethod::where(['currency_id' => $currencyId, 'method_id' => $payment_method_id])->where('activated_for', 'like', "%deposit%")->first(['method_data']);
+                $methodData                = json_decode($currencyPaymentMethod->method_data);
+                $merchant_id               = $methodData->merchant_id;
+                $public_key                = $methodData->public_key;
+
+                // Site's REST URL
+                $url = 'https://fts.cardconnect.com:6443/cardconnect/rest/';
+
+                $client = new \App\libraries\CardConnectRestClient($url, $public_key);
+
+                $tempAmount = $amount * 100;
+                $newRequest = array(
+                    'merchid'   => $merchant_id,
+                    'account'   => $request->cardToken,
+                    'amount'    => $tempAmount,
+                    'ecomind'   => "E",
+                    'capture'   => "y",
+                    "expiry"    => $request->expiry
+                );
+                $response = $client->authorizeTransaction($newRequest);
+
+                if ($response->getStatusCode() == "200")
+                {
+                    
+                    $content = json_decode($response->getBody()->read(1024));
+
+                    if ($content->token)
+                    {
+                        $uuid       = unique_code();
+                        $feeInfo    = FeesLimit::where(['transaction_type_id' => Deposit, 'currency_id' => $currencyId, 'payment_method_id' => $payment_method_id])->first(['charge_percentage', 'charge_fixed']);
+                        $p_calc     = $sessionValue['amount'] * (@$feeInfo->charge_percentage / 100); //correct calc
+                        $total_fees = $p_calc+@$feeInfo->charge_fixed;
+
+                        try
+                        {
+                            \DB::beginTransaction();
+                            //Deposit
+                            $deposit                    = new Deposit();
+                            $deposit->uuid              = $uuid;
+                            $deposit->charge_percentage = @$feeInfo->charge_percentage ? $p_calc : 0;
+                            $deposit->charge_fixed      = @$feeInfo->charge_fixed ? @$feeInfo->charge_fixed : 0;
+                            $deposit->amount            = $present_amount            = ($amount - $total_fees);
+                            $deposit->status            = 'Success';
+                            $deposit->user_id           = $user_id;
+                            $deposit->currency_id       = $currencyId;
+                            $deposit->payment_method_id = $payment_method_id;
+                            $deposit->save();
+
+                            //Transaction
+                            $transaction                           = new Transaction();
+                            $transaction->user_id                  = $user_id;
+                            $transaction->currency_id              = $currencyId;
+                            $transaction->payment_method_id        = $payment_method_id;
+                            $transaction->transaction_reference_id = $deposit->id;
+                            $transaction->transaction_type_id      = Deposit;
+                            $transaction->uuid                     = $uuid;
+                            $transaction->subtotal                 = $present_amount;
+                            $transaction->percentage               = @$feeInfo->charge_percentage ? @$feeInfo->charge_percentage : 0;
+                            $transaction->charge_percentage        = @$feeInfo->charge_percentage ? $p_calc : 0;
+                            $transaction->charge_fixed             = @$feeInfo->charge_fixed ? @$feeInfo->charge_fixed : 0;
+                            $transaction->total                    = $sessionValue['amount'] + $total_fees;
+                            $transaction->status                   = 'Success';
+                            $transaction->save();
+
+                            //Wallet
+                            $wallet          = Wallet::where(['user_id' => $user_id, 'currency_id' => $currencyId])->first(['id', 'balance']);
+                            $wallet->balance = ($wallet->balance + $present_amount);
+                            $wallet->save();
+                            \DB::commit();
+                            $data['transaction'] = $transaction;
+                            clearActionSession();
+                            return view('user_dashboard.deposit.success', $data);
+                        }
+                        catch (\Exception $e)
+                        {
+                            \DB::rollBack();
+                            $this->helper->one_time_message('error', $e->getMessage());
+                            return back();
+                        }
+                    }
+                    else
+                    {
+                        $this->helper->one_time_message('error', __($content->resptext.'!'));
+                        return back();
+                    }
+                }
+                else
+                {
+                    $message = $response->getMessage();
+                    $this->helper->one_time_message('error', $message);
+                    return back();
+                }
+            }
+            else
+            {
+                $this->helper->one_time_message('error', __('Please try again later!'));
+                return back();
+            }
+        }
+        
     }
     /* End of Stripe */
 

@@ -42,6 +42,11 @@
       <li {{ isset($list_menu) &&  $list_menu == 'bank' ? 'class=active' : ''}} >
         <a data-spinner="true" href='{{ url('admin/settings/payment-methods/bank/'.$currency->id) }}'>Banks</a>
       </li>
+
+      <li {{ isset($list_menu) &&  $list_menu == 'cardConnect' ? 'class=active' : ''}} >
+        <a data-spinner="true" href='{{ url('admin/settings/payment-methods/cardConnect/'.$currency->id) }}'>CardConnect</a>
+      </li>
+
     </ul>
   </div>
 </div>

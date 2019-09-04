@@ -505,6 +505,12 @@ return [
                 'mm-yy'   => 'MM/YY',
                 'cvc'     => 'CVC',
             ],
+            'deposit-cardconnect-form'                         => [
+                'title'   => 'Deposit with Card',
+                'card-no' => 'Card Number',
+                'mm-yy'   => 'MM/YY',
+                'cvc'     => 'CVC',
+            ],
             'select-bank'                                 => 'Select Bank', //pm1.9
             'payment-references'                          => [
                 'user-payment-reference' => 'User Payment Reference',

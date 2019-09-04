@@ -450,6 +450,73 @@
 								</button>
 							</div>
 
+						@elseif ($list_menu == 'cardConnect')
+							<!-- cardConnect - Merchant Id -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="cardConnect[merchant_id]">Merchant Id</label>
+								<div class="col-sm-5">
+									<input class="form-control cardConnect[merchant_id]" name="cardConnect[merchant_id]" type="text" placeholder="CardConnect Merchant Id"
+									value="{{ isset($currencyPaymentMethod->method_data) ? json_decode($currencyPaymentMethod->method_data)->merchant_id : '' }}" id="cardConnect_merchant_id">
+									@if ($errors->has('cardConnect[merchant_id]'))
+									<span class="help-block">
+										<strong>{{ $errors->first('cardConnect[merchant_id]') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							<div class="clearfix"></div>
+
+							<!-- cardConnect - User pass -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="cardConnect[public_key]">User Password Token</label>
+								<div class="col-sm-5">
+									<input class="form-control cardConnect[public_key]" name="cardConnect[public_key]" type="text" placeholder="CardConnect Password Token"
+									value="{{ isset($currencyPaymentMethod->method_data) ? json_decode($currencyPaymentMethod->method_data)->public_key : '' }}" id="cardConnect_public_key">
+									@if ($errors->has('cardConnect[public_key]'))
+									<span class="help-block">
+										<strong>{{ $errors->first('cardConnect[public_key]') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							<div class="clearfix"></div>
+
+							<!-- cardConnect - processing_time -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="processing_time">Processing Time (days)</label>
+								<div class="col-sm-5">
+									<input class="form-control processing_time" name="processing_time" type="text" placeholder="CardConnect Processing Time"
+									value="{{ isset($currencyPaymentMethod->processing_time) ? $currencyPaymentMethod->processing_time : '' }}" id="processing_time">
+
+									@if ($errors->has('processing_time'))
+									<span class="help-block">
+										<strong>{{ $errors->first('processing_time') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							<div class="clearfix"></div>
+
+							<!-- cardConnect - Status -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="cardConnect_status">Status</label>
+								<div class="col-sm-5">
+									<select class="form-control" name="cardConnect_status" id="cardConnect_status">
+										<option value=''>Select Status</option>
+										<option value='Active' {{ isset($currencyPaymentMethod->activated_for) && $currencyPaymentMethod->activated_for == json_encode(['deposit' => '']) ? 'selected':"" }}>Active</option>
+										<option value='Inactive' {{ isset($currencyPaymentMethod->activated_for) && $currencyPaymentMethod->activated_for == json_encode(['' => '']) ? 'selected':"" }}>Inactive</option>
+									</select>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+
+							<div class="box-footer">
+								<a id="cancel_anchor" href="{{ url("admin/settings/currency") }}" class="btn btn-danger btn-flat">Cancel</a>
+								<button type="submit" class="btn btn-primary btn-flat pull-right" id="paymentMethodList_update">
+									<i class="spinner fa fa-spinner fa-spin" style="display: none;"></i> <span id="paymentMethodList_update_text">Update</span>
+								</button>
+							</div>
+
 						@elseif ($list_menu == 'Payeer')
 
 							<!-- Payeer - Merchant Id -->
@@ -1116,6 +1183,15 @@
             coinPayments_status:{
                required: true,
             },
+            "cardConnect[merchant_id]":{
+              required: true,
+            },
+            "cardConnect[public_key]":{
+              required: true,
+            },
+            cardConnect_status:{
+               required: true,
+            },
             "perfectMoney[account_id]":{
                required: true,
             },
@@ -1742,6 +1818,9 @@
 					$('#coinPayments_public_key').val(JSON.parse(data.currencyPaymentMethod.method_data).public_key);
 					$('#coinPayments_private_key').val(JSON.parse(data.currencyPaymentMethod.method_data).private_key);
 
+					$('#cardConnect_merchant_id').val(JSON.parse(data.currencyPaymentMethod.method_data).merchant_id);
+					$('#cardConnect_public_key').val(JSON.parse(data.currencyPaymentMethod.method_data).public_key);
+
 					$('#perfectMoney_account_id').val(JSON.parse(data.currencyPaymentMethod.method_data).account_id);
 					$('#perfectMoney_alter_password').val(JSON.parse(data.currencyPaymentMethod.method_data).alter_password);
 
@@ -1765,6 +1844,7 @@
 						$('#twoCheckout_status').val('Active');
 						$('#payUMoney_status').val('Active');
 						$('#coinPayments_status').val('Active');
+						$('#cardConnect_status').val('Active');
 						$('#perfectMoney_status').val('Active');
 						$('#payeer_status').val('Active');
 						$('#cash_status').val('Active');
@@ -1777,6 +1857,7 @@
 					  $('#twoCheckout_status').val('Inactive');
 					  $('#payUMoney_status').val('Inactive');
 					  $('#coinPayments_status').val('Inactive');
+					  $('#cardConnect_status').val('Inactive');
 					  $('#perfectMoney_status').val('Inactive');
 					  $('#payeer_status').val('Inactive');
 					  $('#cash_status').val('Inactive');
@@ -1804,6 +1885,9 @@
 					$('#coinPayments_public_key').val('');
 					$('#coinPayments_private_key').val('');
 
+					$('#cardConnect_merchant_id').val('');
+					$('#cardConnect_public_key').val('');
+
 					$('#perfectMoney_account_id').val('');
 					$('#perfectMoney_alter_password').val('');
 
@@ -1823,6 +1907,7 @@
 					$('#twoCheckout_status').val('');
 					$('#payUMoney_status').val('');
 					$('#coinPayments_status').val('');
+					$('#cardConnect_status').val('');
 					$('#perfectMoney_status').val('');
 					$('#payeer_status').val('');
 					$('#cash_status').val('');
@@ -1903,6 +1988,9 @@
 					$('#coinPayments_public_key').val(JSON.parse(data.currencyPaymentMethod.method_data).public_key);
 					$('#coinPayments_private_key').val(JSON.parse(data.currencyPaymentMethod.method_data).private_key);
 
+					$('#cardConnect_merchant_id').val(JSON.parse(data.currencyPaymentMethod.method_data).merchant_id);
+					$('#cardConnect_public_key').val(JSON.parse(data.currencyPaymentMethod.method_data).public_key);
+
 					$('#perfectMoney_account_id').val(JSON.parse(data.currencyPaymentMethod.method_data).account_id);
 					$('#perfectMoney_alter_password').val(JSON.parse(data.currencyPaymentMethod.method_data).alter_password);
 
@@ -1925,6 +2013,7 @@
 						$('#twoCheckout_status').val('Active');
 						$('#payUMoney_status').val('Active');
 						$('#coinPayments_status').val('Active');
+						$('#cardConnect_status').val('Active');
 						$('#perfectMoney_status').val('Active');
 						$('#payeer_status').val('Active');
 						$('#cash_status').val('Active');
@@ -1937,6 +2026,7 @@
 						$('#twoCheckout_status').val('Inactive');
 						$('#payUMoney_status').val('Inactive');
 						$('#coinPayments_status').val('Inactive');
+						$('#cardConnect_status').val('Inactive');
 						$('#perfectMoney_status').val('Inactive');
 						$('#payeer_status').val('Inactive');
 						$('#cash_status').val('Inactive');
@@ -1967,6 +2057,9 @@
 					$('#coinPayments_public_key').val('');
 					$('#coinPayments_private_key').val('');
 
+					$('#cardConnect_merchant_id').val('');
+					$('#cardConnect_public_key').val('');
+
 					$('#perfectMoney_account_id').val('');
 					$('#perfectMoney_alter_password').val('');
 
@@ -1985,6 +2078,7 @@
 					$('#twoCheckout_status').val('');
 					$('#payUMoney_status').val('');
 					$('#coinPayments_status').val('');
+					$('#cardConnect_status').val('');
 					$('#perfectMoney_status').val('');
 					$('#payeer_status').val('');
 					$('#cash_status').val('');
