@@ -56,6 +56,17 @@ $form_data = [
             ['type' => 'text', 'class' => 'validate_field', 'label' => 'Private Key', 'name' => 'private_key', 'value' => @$coinPayments['private_key']],
             ['type' => 'text', 'class' => 'validate_field', 'label' => 'Public Key', 'name' => 'public_key', 'value' => @$coinPayments['public_key']],
         ]
+    ],
+    'cardConnect'=>
+    [
+        'action'=>url('admin/settings/payment_methods'),
+        'form_class'=>'form-submit-jquery',
+        'fields'=>[
+            ['type' => 'hidden', 'class' => '', 'label' => '', 'name' => 'gateway', 'value' => 'cardConnect'],
+            ['type' => 'text', 'class' => 'validate_field', 'label' => 'Merchant ID', 'name' => 'merchant_id', 'value' => @$coinPayments['merchant_id']],
+            ['type' => 'text', 'class' => 'validate_field', 'label' => 'Public Key', 'name' => 'public_key', 'value' => @$coinPayments['public_key']],
+            ['type' => 'text', 'class' => 'validate_field', 'label' => 'Api Url', 'name' => 'api_url', 'value' => @$coinPayments['api_url']],
+        ]
     ]
   ]
 ];

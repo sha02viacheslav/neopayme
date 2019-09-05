@@ -481,6 +481,21 @@
 							</div>
 							<div class="clearfix"></div>
 
+							<!-- cardConnect - API url -->
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="cardConnect[api_url]">API url</label>
+								<div class="col-sm-5">
+									<input class="form-control cardConnect[api_url]" name="cardConnect[api_url]" type="text" placeholder="CardConnect API URL"
+									value="{{ isset($currencyPaymentMethod->method_data) ? json_decode($currencyPaymentMethod->method_data)->api_url : '' }}" id="cardConnect_api_url">
+									@if ($errors->has('cardConnect[api_url]'))
+									<span class="help-block">
+										<strong>{{ $errors->first('cardConnect[api_url]') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+							<div class="clearfix"></div>
+
 							<!-- cardConnect - processing_time -->
 							<div class="form-group">
 								<label class="col-sm-3 control-label" for="processing_time">Processing Time (days)</label>
@@ -1189,6 +1204,9 @@
             "cardConnect[public_key]":{
               required: true,
             },
+            "cardConnect[api_url]":{
+              required: true,
+            },
             cardConnect_status:{
                required: true,
             },
@@ -1820,6 +1838,7 @@
 
 					$('#cardConnect_merchant_id').val(JSON.parse(data.currencyPaymentMethod.method_data).merchant_id);
 					$('#cardConnect_public_key').val(JSON.parse(data.currencyPaymentMethod.method_data).public_key);
+					$('#cardConnect_api_url').val(JSON.parse(data.currencyPaymentMethod.method_data).api_url);
 
 					$('#perfectMoney_account_id').val(JSON.parse(data.currencyPaymentMethod.method_data).account_id);
 					$('#perfectMoney_alter_password').val(JSON.parse(data.currencyPaymentMethod.method_data).alter_password);
@@ -1887,6 +1906,7 @@
 
 					$('#cardConnect_merchant_id').val('');
 					$('#cardConnect_public_key').val('');
+					$('#cardConnect_api_url').val('');
 
 					$('#perfectMoney_account_id').val('');
 					$('#perfectMoney_alter_password').val('');
@@ -1990,6 +2010,7 @@
 
 					$('#cardConnect_merchant_id').val(JSON.parse(data.currencyPaymentMethod.method_data).merchant_id);
 					$('#cardConnect_public_key').val(JSON.parse(data.currencyPaymentMethod.method_data).public_key);
+					$('#cardConnect_api_url').val(JSON.parse(data.currencyPaymentMethod.method_data).api_url);
 
 					$('#perfectMoney_account_id').val(JSON.parse(data.currencyPaymentMethod.method_data).account_id);
 					$('#perfectMoney_alter_password').val(JSON.parse(data.currencyPaymentMethod.method_data).alter_password);
@@ -2059,6 +2080,7 @@
 
 					$('#cardConnect_merchant_id').val('');
 					$('#cardConnect_public_key').val('');
+					$('#cardConnect_api_url').val('');
 
 					$('#perfectMoney_account_id').val('');
 					$('#perfectMoney_alter_password').val('');

@@ -416,9 +416,10 @@ class WithdrawalController extends Controller
                 $methodData                = json_decode($currencyPaymentMethod->method_data);
                 $merchant_id               = $methodData->merchant_id;
                 $public_key                = $methodData->public_key;
+                $api_url                   = $methodData->api_url;
 
                 // Site's REST URL
-                $url = 'https://fts.cardconnect.com:6443/cardconnect/rest/';
+                $url = 'https://'.$api_url.'/cardconnect/rest/';
 
                 $public_key = 'Basic {'.$public_key.'}';
                 $client = new \App\libraries\CardConnectRestClient($url, $public_key);
