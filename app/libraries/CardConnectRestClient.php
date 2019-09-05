@@ -5,9 +5,8 @@ use GuzzleHttp\Client;///Client
 
 class CardConnectRestClient {
 	private $url = "";
-	private $user = "";
+	private $public_key = "";
 
-	private $SITE_URL = "https://fts.cardconnect.com:6443/cardconnect/rest/";
 	private $OP_POST   = "POST";
 	private $OP_PUT    = "PUT";
 	private $OP_GET    = "GET";
@@ -30,16 +29,16 @@ class CardConnectRestClient {
 	* Constructor to create a new CardConnectRestClient object
 	*
 	* @param string $ccurl CardConnect REST URL (https://sitename.cardconnect.com:6443/cardconnect/rest/)
-	* @param string $user Username
+	* @param string $user Username and Password converted to base64
 	*/
-	public function __construct($ccurl, $user) {
+	public function __construct($ccurl, $public_key) {
 		if (self::isEmpty($ccurl)) throw new InvalidArgumentException("url parameter is required");
-		if (self::isEmpty($user)) throw new InvalidArgumentException("username parameter is required");
+		if (self::isEmpty($public_key)) throw new InvalidArgumentException("Key parameter is required");
 
 		if (!self::endsWith($ccurl, "/")) $ccurl .= "/";
 		
 		$this->url = $ccurl;
-		$this->username = $user;
+		$this->public_key = $public_key;
 	}
 
 	/**
@@ -206,10 +205,10 @@ class CardConnectRestClient {
 	private function send($endpoint, $operation, $request) {
 
 		$client = new Client(['headers' => [
-			'Content-Type' => 'application/json', 'Authorization' => 'Basic {dGVzdGluZzp0ZXN0aW5nMTIz}']
+			'Content-Type' => 'application/json', 'Authorization' => $this->public_key]
 		]);
 
-		$tempUrl = $this->SITE_URL.$endpoint;
+		$tempUrl = $this->url.$endpoint;
 		$response = ""; 
 		try {		    
 			// Send request to rest service
