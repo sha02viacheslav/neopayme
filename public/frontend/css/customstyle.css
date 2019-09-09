@@ -4,7 +4,9 @@ body {
     font-size: 13pt;
     font-weight: 400;
 }
-
+body *{
+    z-index: 100;
+}
 img {
     vertical-align: middle;
     border-style: none;
@@ -54,69 +56,7 @@ table tr td:first-child {
 .form-group {
     text-align: left;
 }
-/*------------------- Top Header -----------------*/
 
-#tophead {
-    background: #063241;
-    display: block;
-    clear: both;
-    width: 100%;
-}
-
-.navbar {
-    padding: 0px !important;
-}
-
-.navbar-dark .navbar-container {
-    height: 114px;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(173, 175, 175, 1);
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #5B5B5B;
-}
-
-.navbar-dark .nav_active .nav-link {
-    color: #5B5B5B;
-}
-
-.navbar-dark .navbar-nav .nav_active{
-    border-bottom: 3px solid #5B5B5B;
-}
-
-.navbar-accent .navbar-container {
-    height: 96px;
-    border-bottom: 2px solid #545454;
-}
-
-.navbar-accent .navbar-nav .nav-link {
-    color: #F5B72E;
-}
-
-.navbar-accent .navbar-nav .nav-link:hover {
-    color: #FFD580;
-}
-
-.navbar-accent .nav_active .nav-link {
-    color: #FFD580;
-}
-
-.navbar-accent .navbar-nav .nav_active{
-    border-bottom: 3px solid #FFD580;
-}
-
-.highlight-header {
-    background-color: rgba(225, 225, 225, 1) !important;
-    transition: all 1s;
-}
-
-.navbar-nav {
-    float: right;
-    margin: auto;
-}
 /*quick contact*/
 
 #quick-contact {
@@ -232,8 +172,11 @@ header a.logo {
     font-size: 24px;
     border: none;
 }
-/*-----------------------welcome section------------------*/
 
+
+
+
+/*-----------------------welcome section------------------*/
 canvas {
     display: block;
     vertical-align: bottom;
@@ -300,12 +243,6 @@ canvas {
     width: 70%;
 }
 
-.welcome-area.image-bg {
-    position: relative;
-    background-size: cover !important;
-    background: url("../images/slider_image.jpg") top center;
-    height: 595px;
-}
 
 .welcome-text {
     width: 100%;
@@ -384,6 +321,14 @@ canvas {
     background: #063241;
     transition: all 0.5s;
 }
+/*-----------------------welcome section------------------*/
+
+
+
+
+
+
+
 
 
 
@@ -990,60 +935,165 @@ canvas {
 /*------------------Section-----------------*/
 
 
-/*------------------section-home-welcome-----------------*/
+
+
+
+
+
+
+
 
 /*------------------section-home-welcome-----------------*/
+
+.sticky-header {
+    position: fixed;
+    z-index: 200;
+}
+/*------------------- Top Header -----------------*/
+
+#tophead {
+    background: #063241;
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+.navbar {
+    padding: 0px !important;
+}
+
+.navbar-dark .navbar-container {
+    height: 114px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(173, 175, 175, 1);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #5B5B5B;
+}
+
+.navbar-dark .nav_active .nav-link {
+    color: #5B5B5B;
+}
+
+.navbar-dark .navbar-nav .nav_active{
+    border-bottom: 3px solid #5B5B5B;
+}
+
+.navbar-accent .navbar-container {
+    height: 200px;
+    border-bottom: 2px solid #545454;
+}
+
+.navbar-accent .navbar-nav .nav-link {
+    color: #F5B72E;
+}
+
+.navbar-accent .navbar-nav .nav-link:hover {
+    color: #FFD580;
+}
+
+.navbar-accent .nav_active .nav-link {
+    color: #FFD580;
+}
+
+.navbar-accent .navbar-nav .nav_active{
+    border-bottom: 3px solid #FFD580;
+}
+
+.highlight-header {
+    background-color: rgba(225, 225, 225, 1) !important;
+    transition: all 1s;
+}
+
+.navbar-nav {
+    float: right;
+    margin: auto;
+}
+/*------------------section-home-welcome-----------------*/
+
+
+
+
+
+
+/*------------------section-home-welcome-----------------*/
+
+.section-home-welcome {
+    position: relative;
+    background-size: cover !important;
+    background: url("../images/slider_image.jpg") top center;
+    height: 860px;
+}
+
+.section-home-welcome::after {
+    content: '';
+    background: rgba(0, 0, 0);
+    opacity: 0.69;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px; 
+}
+
+
+.section-home-welcome .welcome-text {
+    width: 100%;
+    padding-top: 220px;
+    padding-left: 80px;
+    color: #fff;
+}
+
+.section-home-welcome .welcome-text h1 {
+    font-size: 56px;
+    color: #fff;
+    font-weight: bold;
+    padding-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    font-family: 'GOTHICB';
+}
+
+.section-home-welcome .welcome-text h2 {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 400;
+    padding-bottom: 50px;
+    letter-spacing: 1.5px;
+}
+/*------------------section-home-welcome-----------------*/
+
+
+
+
+
+
 
 /*------------------section-home-feature-----------------*/
 .section-home-feature {
     position: relative;
     padding-top: 60px;
     padding-bottom: 60px;
+    background-size: cover !important;
+    background: url("../images/home_welcome_roundbg.png") top center no-repeat;
 }
 
-
-.banner-text {
-    position: relative;
-    display: block;
+.section-home-feature feature-icon {
+    padding: 30px;
 }
 
-.banner-text .feature-icon {
+.section-home-feature .feature-icon {
     text-align: center;
     display: block;
 }
 
-.banner-text .feature-icon h2 {
-    font-size: 24px;
-    font-weight: 500;
-    padding-top: 10px;
-    color: #ffffff;
+.section-home-feature .feature-icon img {
+    width: 200px !important;
 }
 
-.banner-text .feature-icon p {
-    font-size: 14px;
-    color: #ffffff;
-}
-
-.banner-text .feature-icon span {
-    background: rgba(35, 47, 105, .8);
-    border-radius: 100%;
-    height: 100px;
-    margin: 10px;
-    width: 100px;
-    position: relative;
-    display: inline-block;
-    line-height: 100px;
-    text-align: center;
-    margin: 0 auto;
-    -moz-transition: all 0.4s ease-out 0s;
-    -webkit-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-}
-
-.banner-text .feature-icon div {
-    border: 3px solid #232f69;
-    background: transparent;
-    border-radius: 100%;
+.section-home-feature .feature-icon img {
     display: inline-block;
     padding: 10px;
     margin: 0 auto;
@@ -1052,72 +1102,10 @@ canvas {
     transition: all 0.4s ease-out 0s;
 }
 
-.banner-text a:hover .feature-icon div {
-    border: 3px solid #6ed1e4;
-    -moz-transition: all 0.4s ease-out 0s;
-    -webkit-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-}
-
-.banner-text a:hover .feature-icon span {
-    background: #6ed1e4;
-    -moz-transition: all 0.4s ease-out 0s;
-    -webkit-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-}
-
-.banner-text .feature-icon .fa {
-    font-size: 40px;
-    color: #ffffff;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    display: inline-block;
-    margin: auto;
-}
-
-.banner-text .feature-sec a {
-    margin: 30px auto;
-    display: block;
-}
-
-
 @media screen and (max-width: 767px) {
   
-    .banner-text .feature-icon .fa {
-        font-size: 18px;
-    }
-    .banner-text .feature-icon h2 {
-        font-size: 18px;
-    }
-
-    .banner-text .feature-icon p {
-        font-size: 12px;
-        color: #ffffff;
-    }
-
-    .banner-text .feature-icon span {
-        height: 50px;
-        margin: 5px;
-        width: 50px;
-        line-height: 50px;
-    }
-
-    .banner-text .feature-icon div {
-        border: 1px solid #232f69;
-        padding: 4px;
-    }
-    .banner-text .col-md-4 {
-        width: 33%;
-    }
-    .overlay-text {
-        display: none;
-    }
-    .banner-text {
-        top: 0px;
-    }
-    .banner-text .feature-icon div {
-        margin-bottom: 0px;
+    .section-home-feature .feature-icon img {
+        width: 90px !important;
     }
  
 }
@@ -1139,9 +1127,19 @@ canvas {
     background: url("../../../public/frontend/images/section-home-choose.jpg") top center no-repeat;
 }
 
+.section-home-choose::after {
+    content: '';
+    background: rgba(0, 0, 0);
+    opacity: 0.84;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px; 
+}
+
 .section-home-choose .sec-title {
     font-size: 46px;
-    font-weight: 700;
+    font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
     color: #F5B72E;
@@ -1165,9 +1163,99 @@ canvas {
 
 
 
+/*----------------- section-home-payment-----------------*/
+.section-home-payment {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-color: #F5B72E;
+    display: block;
+    text-align: center;
+}
+
+.section-home-payment .payment-icon-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.section-home-payment img {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* .card-header {
+    border-top: 5px solid #0b2854;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 40px;
+} */
+/*----------------- section-home-payment-----------------*/
 
 
-/*------------------section-home-choose-----------------*/
+
+
+
+/*----------------- section-home-service-----------------*/
+.section-home-service {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-size: cover!important;
+    text-align: center;
+}
+.section-home-service .row {
+    justify-content: center;
+}
+.section-home-service .row div{
+    padding: 30px;
+}
+
+.section-home-service .feature-icon {
+    display: block;
+}
+
+.section-home-service .feature-icon h2 {
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #5B5B5B;
+}
+
+.section-home-service .feature-icon p {
+    font-size: 14px;
+    color: #5B5B5B;
+}
+
+.section-home-service .feature-icon div {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    -moz-transition: all 0.4s ease-out 0s;
+    -webkit-transition: all 0.4s ease-out 0s;
+    transition: all 0.4s ease-out 0s;
+}
+
+.section-home-service .feature-icon .fa {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+}
+
+.section-home-service .feature-sec a {
+    margin: 30px auto;
+    display: block;
+}
+/*----------------- section-home-service-----------------*/
+
+
+
 
 
 /*------------------section-home-how-----------------*/
@@ -1194,6 +1282,29 @@ canvas {
 
 .section-home-how .overlay-img .color-bg {
     background-color: #F5A22E;
+}
+.section-home-how .sec-title {
+    padding: 30px;
+}
+.section-home-how .sec-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.section-home-how .how-content {
+    list-style: initial !important;
+    margin-left: 18px;
+}
+.section-home-how .how-content li{
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #FFFFFF;
+    text-align: left;
 }
 /*------------------section-home-how-----------------*/
 
@@ -1249,118 +1360,18 @@ canvas {
 
 
 
-/*----------------- section 02-----------------*/
-.section-02 .sec-title h2 {
-    font-size: 24px;
-    font-weight: 700;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #232f69;
-    text-align: center;
-    padding-bottom: 30px;
-    border-bottom: 0px dotted #232f69;
-    margin-bottom: 30px;
-}
 
-.section-02 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    background-color: #F5B72E;
-    display: block;
-    text-align: center;
-}
 
-.section-02 img {
-    max-width: 180px;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
-.card-header {
-    border-top: 5px solid #0b2854;
-    padding: 20px;
-}
 
-.card-body {
-    padding: 40px;
-}
 
-.sign-up {}
 /*----------------- section-home-paymentgateway -----------------*/
 
 
 
 /*----------------- section-home-paymentgateway-----------------*/
-.feature-sec {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    background-size: cover!important;
-    text-align: center;
-}
-.feature-sec .row {
-    justify-content: center;
-}
 
-.feature-icon {
-    display: block;
-}
 
-.feature-icon h2 {
-    font-size: 22px;
-    font-weight: 500;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #5B5B5B;
-}
-
-.feature-icon p {
-    font-size: 14px;
-    color: #5B5B5B;
-}
-
-.feature-icon span {
-    background: rgba(100, 120, 165, .8);
-    border-radius: 100%;
-    height: 100px;
-    margin: 10px;
-    width: 100px;
-    position: relative;
-    display: inline-block;
-    line-height: 100px;
-    margin: 0 auto;
-    -moz-transition: all 0.4s ease-out 0s;
-    -webkit-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-}
-
-.feature-icon div {
-    border: 3px solid #8992a9;
-    background: transparent;
-    border-radius: 100%;
-    display: inline-block;
-    padding: 10px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    -moz-transition: all 0.4s ease-out 0s;
-    -webkit-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-}
-
-.feature-icon .fa {
-    font-size: 40px;
-    color: #ffffff;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    display: inline-block;
-    margin: auto;
-}
-
-.feature-sec a {
-    margin: 30px auto;
-    display: block;
-}
 /*-----------------section 04-----------------*/
 
 .section-04 {
@@ -2301,7 +2312,8 @@ padding-bottom: 20px;}
 
 
 .overlay-dark {
-    background: rgba(0, 0, 0, 0.87);
+    background: rgba(0, 0, 0);
+    opacity: 87%;
     display: block;
     width: 100%;
     height: 100%;

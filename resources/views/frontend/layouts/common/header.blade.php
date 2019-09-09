@@ -6,7 +6,8 @@ $menusHeader = getMenuContent('Header');
 //$logo = getCompanyLogo(); //from session
 $logo = getCompanyLogoWithoutSession(); //direct query
 ?>
-<header id="js-header-old">
+<header id="js-header-old"
+    class="<?= isset( $menu ) && ( $menu == 'home' ) ? 'sticky-header': '' ?>">
     <nav id="top-navbar" 
         class="navbar navbar-expand-lg 
         <?= isset( $menu ) && ( $menu == 'home' ) ? 'navbar-accent': 'navbar-dark bg-primary' ?>">

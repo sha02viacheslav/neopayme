@@ -1,5 +1,4 @@
 <section class="section-home-choose">
-    <div class="overlay-dark"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
