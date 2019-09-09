@@ -98,41 +98,6 @@
     .contact-form-area {
         padding: 16px 10px;
     }
-    .banner-text .feature-icon .fa {
-        font-size: 18px;
-    }
-    .banner-text .feature-icon h2 {
-        font-size: 18px;
-    }
-
-    .banner-text .feature-icon p {
-        font-size: 12px;
-        color: #ffffff;
-    }
-
-    .banner-text .feature-icon span {
-        height: 50px;
-        margin: 5px;
-        width: 50px;
-        line-height: 50px;
-    }
-
-    .banner-text .feature-icon div {
-        border: 1px solid #232f69;
-        padding: 4px;
-    }
-    .banner-text .col-md-4 {
-        width: 33%;
-    }
-    .overlay-text {
-        display: none;
-    }
-    .banner-text {
-        top: 140px;
-    }
-    .banner-text .feature-icon div {
-        margin-bottom: 0px;
-    }
     .navbar-dark .navbar-nav .nav-link {
         color: #ffffff;
         background: #0b2854;
@@ -154,31 +119,31 @@
         width: 100%;
     }
 
-#logo_container_small{
-    display: block;
-}
+    #logo_container_small{
+        display: block;
+    }
 
-#logo_container{
-    display: none;
-}
+    #logo_container{
+        display: none;
+    }
 
-#quick-contact{
-    display: none;
-}
+    #quick-contact{
+        display: none;
+    }
 
-.auth-menu{
-    display: block;
-}
-.sec-title h2{
-    font-size: 20px !important;
-}
+    .auth-menu{
+        display: block;
+    }
+    .sec-title h2{
+        font-size: 20px !important;
+    }
 
-.send-money .welcome-text .start-btn, .send-money .welcome-text .iphone-btn {
-    padding :10px;
-    font-size: 10px;
-    font-weight: bold;
-    text-decoration: none;
-}
+    .send-money .welcome-text .start-btn, .send-money .welcome-text .iphone-btn {
+        padding :10px;
+        font-size: 10px;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
 
 }
@@ -196,31 +161,31 @@
         margin-top: -30px;
     }
 
-#logo_container_small{
-    display: block;
-}
+    #logo_container_small{
+        display: block;
+    }
 
-#logo_container{
-    display: none;
-}
+    #logo_container{
+        display: none;
+    }
 
-#quick-contact{
-    display: none;
-}
-.auth-menu{
-    display: block;
-}
+    #quick-contact{
+        display: none;
+    }
+    .auth-menu{
+        display: block;
+    }
 
-.sec-title h2{
-    font-size: 20px !important;
-}
+    .sec-title h2{
+        font-size: 20px !important;
+    }
 
-.send-money .welcome-text .start-btn, .send-money .welcome-text .iphone-btn {
-    padding :10px;
-    font-size: 10px;
-    font-weight: bold;
-    text-decoration: none;
-}
+    .send-money .welcome-text .start-btn, .send-money .welcome-text .iphone-btn {
+        padding :10px;
+        font-size: 10px;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
 
 }

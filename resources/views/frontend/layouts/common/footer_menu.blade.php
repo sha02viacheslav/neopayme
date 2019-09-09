@@ -7,7 +7,34 @@ $menusFooter = getMenuContent('Footer');
     <div class="contact-content">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-5 col-sm-5">
+                    @if (request()->path() != 'merchant/payment')
+                        <div class="quick-link">
+                            <h2 style="margin-left: 16px">@lang('message.footer.related-link')</h2>
+                            <ul>
+                                <li class="nav-item"><a href="{{url('/')}}"
+                                                        class="nav-link">@lang('message.home.title-bar.home')</a></li>
+                                <li class="nav-item"><a href="{{url('/send-money')}}"
+                                                        class="nav-link">@lang('message.home.title-bar.send')</a></li>
+                                <li class="nav-item"><a href="{{url('/request-money')}}"
+                                                        class="nav-link">@lang('message.home.title-bar.request')</a></li>
+                                <li class="nav-item"><a href="{{url('/request-money')}}"
+                                                        class="nav-link">@lang('message.home.title-bar.about')</a></li>
+                                <li class="nav-item"><a href="{{url('/request-money')}}"
+                                                        class="nav-link">@lang('message.home.title-bar.portfolio')</a></li>
+                                <li class="nav-item"><a href="{{url('/request-money')}}"
+                                                        class="nav-link">@lang('message.home.title-bar.contact')</a></li>
+                                @if(!empty($menusFooter))
+                                    @foreach($menusFooter as $footer_navbar)
+                                        <li class="nav-item"><a href="{{url($footer_navbar->url)}}"
+                                                                class="nav-link"> {{ $footer_navbar->name }}</a></li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+                <div class="col-md-7 col-sm-7">
                     <div class="contact-detail">
                         <h2>@lang('message.footer.follow-us')</h2>
                         <div class="social-icons">
@@ -20,29 +47,7 @@ $menusFooter = getMenuContent('Footer');
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
-                    @if (request()->path() != 'merchant/payment')
-                        <div class="quick-link">
-                            <h2 style="margin-left: 60px">@lang('message.footer.related-link')</h2>
-                            <ul style="display: grid;grid-template-columns: 170px auto">
-                                <li class="nav-item"><a href="{{url('/')}}"
-                                                        class="nav-link">@lang('message.home.title-bar.home')</a></li>
-                                <li class="nav-item"><a href="{{url('/send-money')}}"
-                                                        class="nav-link">@lang('message.home.title-bar.send')</a></li>
-                                <li class="nav-item"><a href="{{url('/request-money')}}"
-                                                        class="nav-link">@lang('message.home.title-bar.request')</a></li>
-                                @if(!empty($menusFooter))
-                                    @foreach($menusFooter as $footer_navbar)
-                                        <li class="nav-item"><a href="{{url($footer_navbar->url)}}"
-                                                                class="nav-link"> {{ $footer_navbar->name }}</a></li>
-                                    @endforeach
-                                @endif
-                                <li class="nav-item"><a href="{{url('/developer')}}" class="nav-link">@lang('message.home.title-bar.developer')</a></li>
-                            </ul>
-                        </div>
-                    @endif
-                </div>
-                <div class="col-md-4 col-sm-4">
+                <!-- <div class="col-md-4 col-sm-4">
                     <form class="contact-form-area">
                         <h2>@lang('message.footer.language')</h2>
                         <div class="form-group">
@@ -52,17 +57,8 @@ $menusFooter = getMenuContent('Footer');
                                 @endforeach
                             </select>
                         </div>
-                        <div class="playStore">
-                            @foreach(getAppStoreLinkFrontEnd() as $app)
-                                @if (isset($app->logo))
-                                    <a href="{{$app->link}}"><img src="{{url('public/uploads/app-store-logos/'.$app->logo)}}" class="img-responsive" style="padding-left:5px;padding-right: 5px;width:50%; float:left;height: 39px;"/></a>
-                                @else
-                                    <a href="#"><img src='{{ url('public/uploads/app-store-logos/default-logo.jpg') }}' class="img-responsive" width="120" height="90" style="height: 39px;width:50%; float:left;"/></a>
-                                @endif
-                            @endforeach
-                        </div>
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -46,10 +46,13 @@
             e.preventDefault();
             var top = paymoneyWindow.scrollTop();
             var scrollTopArea = $("#scroll-top-area");
+            var topNavbar = $("#top-navbar");
             if (top < 150) {
                 scrollTopArea.css('display', 'none');                    
+                topNavbar.removeClass('highlight-header');                    
             } else if (top >= 150) {
-                scrollTopArea.css('display', 'block');
+                scrollTopArea.css('display', 'block');                   
+                topNavbar.addClass('highlight-header'); 
             }
         });
 

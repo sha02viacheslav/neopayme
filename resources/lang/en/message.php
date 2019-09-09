@@ -180,9 +180,12 @@ return [
 
     'home'                 => [
         'title-bar'       => [
-            'home'      => 'Home',
-            'send'      => 'Send',
-            'request'   => 'Request',
+            'home'      => 'HOME',
+            'send'      => 'SEND',
+            'request'   => 'REQUEST',
+            'about'     => 'ABOUT US',
+            'portfolio' => 'PORTFOILO',
+            'contact'   => 'CONTACT US',
             'developer' => 'Developer',
             'login'     => 'Login',
             'register'  => 'Register',
@@ -190,13 +193,14 @@ return [
             'dashboard' => 'Dashboard',
         ],
         'banner'          => [
-            'title'      => 'Simple money transfer to :br your loved ones ',
+            'title'      => 'MONEY TRANSFER',
+            'description'=> 'Simple money transfer to your :br loved ones...',
             'sub-title1' => 'Simple to :br Integrate',
             'sub-title2' => 'Multiple :br Wallet',
             'sub-title3' => 'Advanced :br Security',
         ],
         'choose-us'       => [
-            'title'      => 'Why choose us?',
+            'title'      => 'WHY CHOOSE US?',
             'sub-title1' => 'We are not bank. With us you get low fees & real-time exchange rates.',
             'sub-title2' => 'Get your money to family & friends instant, you just need an email address.',
             'sub-title3' => 'To transfer money, withdrawal & exchange currency -our fees are in low cost.',
@@ -321,7 +325,12 @@ return [
             'sign-up' => 'Sign Up to '. $getCompanyName,
         ],
     ],
-
+    'about-us'           => [
+        'banner'    => [
+            'title'     => 'ABOUT US',
+            'sub-title' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.',
+        ],
+    ],
     'login'                => [
         'title'           => 'Login',
         'form-title'      => 'Sign In',

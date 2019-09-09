@@ -31,6 +31,33 @@ class ContentController extends Controller
             return view('frontend.pages.request-money', $data);
 
         }
+        elseif ($url == 'about-us')
+        {
+
+            $data['pageInfo']  = 'About Us';
+            $data['exception'] = Meta::where('url', $url)->first();
+            $data['menu']      = 'about-us';
+            return view('frontend.pages.about-us', $data);
+
+        }
+        elseif ($url == 'portfolio')
+        {
+
+            $data['pageInfo']  = 'Portfolio';
+            $data['exception'] = Meta::where('url', $url)->first();
+            $data['menu']      = 'portfolio';
+            return view('frontend.pages.portfolio', $data);
+
+        }
+        elseif ($url == 'contact-us')
+        {
+
+            $data['pageInfo']  = 'Contact Us';
+            $data['exception'] = Meta::where('url', $url)->first();
+            $data['menu']      = 'contact-us';
+            return view('frontend.pages.contact-us', $data);
+
+        }
         elseif ($url == 'developer')
         {
             $data['pageInfo']   = 'Developer';
