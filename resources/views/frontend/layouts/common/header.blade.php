@@ -7,17 +7,20 @@ $menusHeader = getMenuContent('Header');
 $logo = getCompanyLogoWithoutSession(); //direct query
 ?>
 <header id="js-header-old">
-    <nav id="top-navbar" class="navbar navbar-expand-lg <?= isset( $menu ) && ( $menu == 'home' ) ? 'navbar-accent': 'navbar-dark' ?> <?= isset( $menu ) && ( $menu == 'home' ) ? '': 'bg-primary' ?>">
+    <nav id="top-navbar" 
+        class="navbar navbar-expand-lg 
+        <?= isset( $menu ) && ( $menu == 'home' ) ? 'navbar-accent': 'navbar-dark bg-primary' ?>">
         <div class="container navbar-container">
-            @if($logo)
-                <a style="width: 192px;overflow: hidden;"  class="navbar-brand" href="@if (request()->path() != 'merchant/payment') {{ url('/') }} @else {{ '#' }} @endif">
-                    <img src="{{asset('public/images/logos/logo_yellow.png')}}" alt="logo" class="img-responsive img-fluid">
-                </a>
-            @else
-                <a style="width: 192px;overflow: hidden;"  class="navbar-brand" href="@if (request()->path() != 'merchant/payment') {{ url('/') }} @else {{ '#' }} @endif">
-                    <img src="{{ url('public/images/logos/logo_dark.png'') }}" class="img-responsive" width="80" height="50">
-                </a>
-            @endif
+            <a style="width: 192px;overflow: hidden;"  
+                class="navbar-brand" 
+                href="@if (request()->path() != 'merchant/payment') {{ url('/') }} @else {{ '#' }} @endif">
+                <img src="@if (isset( $menu ) && ( $menu == 'home' )) 
+                    {{ url('public/images/logos/logo_yellow.png') }} 
+                    @else {{ url('public/images/logos/logo_dark.png') }} 
+                    @endif" 
+                    alt="logo" 
+                    class="img-responsive img-fluid">
+            </a>
 
             @if (request()->path() != 'merchant/payment')
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

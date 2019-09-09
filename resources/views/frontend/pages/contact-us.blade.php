@@ -7,19 +7,41 @@
     <!--End banner Section-->
 
     <!--Start Section A -->
-    <section style="padding-bottom: 20px;">
+    <section style="padding-bottom: 50px;">
         <div class="container">
             <div style="display: flex; justify-content: center;">
                 <div>
                     <div class="contact-list-box">
-                        <h2><span>1</span> @lang('message.send-money.section-a.sub-section-1.title')</h2>
-                        <p>@lang('message.send-money.section-a.sub-section-1.sub-title')</p>
+                        <div class="contact-list-wrap">
+                            <div class="contact-list-img">
+                                <img src="{{ url('public/frontend/images/contact_phone1.png') }}" 
+                                    class="img-responsive">
+                            </div>
+                            <p>(+1) 555 55 55</p>
+                        </div>
+                        <div class="contact-list-wrap">
+                            <div class="contact-list-img">
+                                <img src="{{ url('public/frontend/images/contact_phone2.png') }}" 
+                                    class="img-responsive">
+                            </div>  
+                            <p>(+1) 555 55 55</p>
+                        </div>
+                        <div class="contact-list-wrap">
+                            <div class="contact-list-img">
+                                <img src="{{ url('public/frontend/images/contact_email.png') }}" 
+                                    class="img-responsive">
+                            </div>  
+                            <p>user@example.com</p>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <div class="contact-list-box" style="text-align: center;">
-                        <h2><span>2</span></h2>
-                        <p>@lang('message.send-money.section-a.sub-section-2.sub-title')</p>
+                        <div class="contact-location-img">
+                            <img src="{{ url('public/frontend/images/contact_location.png') }}" 
+                                class="img-responsive">
+                        </div>
+                        <p class="contact-location-description">Enter your recipient email address that won't be share with others and remain secured, then add an amount with currency to send securely.</p>
                     </div>
                 </div>
             </div>

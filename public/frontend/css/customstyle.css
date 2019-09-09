@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Century Gothic';
     font-size: 13pt;
     font-weight: 400;
 }
@@ -11,7 +11,6 @@ img {
     margin: 0 auto;
     display: inline-block;
     padding: 0px;
-    width: 100%;
 }
 /* Table design */
 /* ----------------------------------- */
@@ -69,7 +68,7 @@ table tr td:first-child {
 }
 
 .navbar-dark .navbar-container {
-    height: 84px;
+    height: 114px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -185,7 +184,6 @@ table tr td:first-child {
 header {
     z-index: 5;
     width: 100%;
-    position: fixed !important;
     font-family: 'GOTHICB';
 }
 
@@ -2207,22 +2205,50 @@ padding-bottom: 20px;}
 .contact-welcome-area {
     position: relative;
     background-size: cover !important;
-    background: url("../images/contact-welcome-img.jpg") top center;
+    background: url("../images/contact-welcome-img.png") top center;
     height: 595px;
 }
 
 .contact-list-box {
-    width: 220px;
-    height: 260px;
-    margin: 0px 20px;
-    padding: 25px;
+    width: 396px;
+    height: 432px;
+    margin: 0px 40px;
+    padding: 40px 30px 30px 50px;
     border-radius: 20px;
     position: relative;
-    top: -30px;
+    top: -41px;
     background: #FFFFFF;
     box-shadow: 0 0 4px 0 rgba(0,0,0,.08),0 2px 4px 0 rgba(0,0,0,.12);
 }
 
+.contact-list-wrap {
+    display: flex;
+    height: 114px;
+    padding-top: 40px;
+    align-items: center;
+}
+
+.contact-list-img {
+    width: 86px !important;
+    display: flex;
+    align-items: center;
+}
+
+.contact-list-wrap p {
+    width: 100%;
+
+}
+.contact-list-box *{
+    font-family: "Century Gothic";
+    font-size: 24px !important;
+    color: #525252;
+    text-align: center;
+    line-height: 30px;
+}
+
+.contact-list-box .contact-location-description {
+    padding-top: 30px
+}
 /******************Contact page***************/
 
 
@@ -2232,31 +2258,39 @@ padding-bottom: 20px;}
 /******************About page***************/
 .about-welcome-area {
     position: relative;
+    height: calc(100vh - 114px);
     background-size: cover !important;
-    background: url("../images/about-welcome-img.jpg") top center;
-    height: 595px;
+    background: url("../images/about-welcome-img.png") top center;
+}
+
+.about-content-box {
+    padding-top: 190px;
+}
+
+.about-logo-wrap {
+    display: flex;
 }
 
 .about-text {
     width: 100%;
+    padding-top: 100px;
     position: relative;
-    top: 145px;
     color: #fff;
 }
 
 .about-text h1 {
     font-size: 24px;
     color: #fff;
-    font-weight: 400;
+    font-weight: bold;
     padding-bottom: 18px;
     letter-spacing: 1.5px;
     text-align: center;
 }
 
 .about-text h3 {
-    font-size: 12px;
-    color: #fff;
+    font-size: 14px;
     font-weight: 400;
+    color: #fff;
     padding-bottom: 20px;
     letter-spacing: 1.5px;
     text-align: center !important;
@@ -2266,12 +2300,8 @@ padding-bottom: 20px;}
 /******************About page***************/
 
 
-
-
-
-
 .overlay-dark {
-    background: rgba(15, 15, 15, 0.8);
+    background: rgba(0, 0, 0, 0.87);
     display: block;
     width: 100%;
     height: 100%;
