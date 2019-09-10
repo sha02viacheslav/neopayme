@@ -20,6 +20,7 @@
                 </div>
             </div>
         </div>
+        <img src="{{ url('public/frontend/images/welcome_round_bg.svg') }}" class="round-white-bottom">
     </section>
     <!--End banner Section-->
 
@@ -34,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="padding-top: 50px;">
                 <div class="col-md-4">
                     <div class="request-process">
                         <span>1</span>
@@ -66,18 +67,19 @@
     <!--Start Section B-->
     <section class="section-request_02">
         <!-- <div class="container"> -->
-            <div style="display: flex;">
-                <div class="fill-remaining-space">
+        <div style="display: flex;">
+            <div class="fill-remaining-space">
+            </div>
+            <div class="box-with-shape">
+                <div class="shape-backgound">
                 </div>
-                <div class="box-with-shape">
-                    <div class="shape-backgound">
-                    </div>
-                    <div class="sec-title-laptop">
-                        <h2>@lang('message.request-money.section-b.title')</h2>
-                        <p>@lang('message.request-money.section-b.sub-title')</p>
-                    </div>
+                <div class="sec-title-laptop">
+                    <h2>@lang('message.request-money.section-b.title')</h2>
+                    <p>@lang('message.request-money.section-b.sub-title')</p>
                 </div>
             </div>
+        </div>
+        <img src="{{ url('public/frontend/images/welcome_round_bg.svg') }}" class="round-white-bottom">
         <!-- </div> -->
     </section>
     <!--End Section B-->
@@ -99,6 +101,7 @@
 
     <!--Start Section D-->
     <section class="section-request_04">
+        <img src="{{ url('public/frontend/images/request_04_round_bg.svg') }}" class="round-white-top">
     </section>
     <!--End Section D-->
 

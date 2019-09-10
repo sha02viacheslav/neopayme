@@ -6,36 +6,27 @@
 
 @section('content')
 
-<!--Start banner Section-->
-<section class="inner-banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>@lang('message.registration.title')</h1>
-            </div>
-        </div>
-    </div>
-</section>
-<!--End banner Section-->
-
 <!--Start Section-->
-<section class="section-01 sign-up padding-30">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-6 mx-auto">
-                        <!-- form card login -->
-                        <div class="card rounded-0">
-                            <div class="card-header">
-                                <h3 class="mb-0">@lang('message.registration.form-title')</h3>
-                            </div>
 
-                            <div class="card-body">
-                                @include('frontend.layouts.common.alert')
-                                <br>
+<section class="section-signup">
+        <div style="display: flex; justify-content: flex-end; height: 100%;">
+            <div class="signup-box" style="width: 50%;">
+                <div class="signup-form">
+                    <!-- form card signup -->
+                    <div class="card" style="border-top: solid 7px #F8AE3A;">
+                        <div class="card-header">
+                            <h3 class="mb-0 text-left" style="color: #545454;">@lang('message.registration.form-title')</h3>
+                        </div>
+                        <div class="card-body">
 
-                                <form action="{{ url('register/store') }}" class="form-horizontal" id="register_form" method="POST">
+                            @include('frontend.layouts.common.alert')
+                            <br>
+                            <style>
+                                .error{
+                                    font-weight: bold;
+                                }
+                            </style>
+                            <form action="{{ url('register/store') }}" class="form-horizontal" id="register_form" method="POST">
                                     {{ csrf_field() }}
 
                                     <input type="hidden" name="defaultCountry" id="defaultCountry" class="form-control">
@@ -129,25 +120,25 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                            <!--/card-block-->
-                        </div>
-                        <!-- /form card login -->
 
-                        <div class="signin">
-                            <div class="message">
-                                <span>@lang('message.registration.new-account-question') &nbsp; </span> <a href="{{url('login')}}">@lang('message.registration.sign-here')</a>.
+                            <div class="signin">
+                                <div class="message">
+                                    <span>@lang('message.registration.new-account-question') &nbsp; </span> <a href="{{url('login')}}">@lang('message.registration.sign-here')</a>.
+                                </div>
                             </div>
+
                         </div>
+                        <!--/card-block-->
                     </div>
+                    <!-- /form card signup -->
+                    
                 </div>
-                <!--/row-->
             </div>
-            <!--/col-->
         </div>
         <!--/row-->
-    </div>
-</section>
+    </section>
+
+
 @endsection
 
 @section('js')

@@ -233,7 +233,7 @@ return [
     ],
     'send-money'           => [
         'banner'    => [
-            'title'     => 'Send Money The Way That Suits You',
+            'title'     => 'SEND MONEY THE WAY THAT SUITS YOU',
             'sub-title' => 'Quickly and easily send and receive money or give a voucher as gift.',
             'sign-up'   => 'Sign Up to ' . $getCompanyName,
             'login'     => 'Log In Now',
@@ -258,12 +258,12 @@ return [
             ],
         ],
         'section-b' => [
-            'title'     => 'Send Money Within A Seconds.',
+            'title'     => 'SEND MONEY WITHIN A SECONDS',
             'sub-title' => 'Anyone with an email address can send/recive payment request whether they have a account or
                             not. They can pay with a credit card or bank account',
         ],
         'section-c' => [
-            'title'     => 'Send Money To Anyone, Anywhere, Instantly Using '. $getCompanyName .' System', //edited by parvez
+            'title'     => 'SEND MONEY TO ANYONE, ANYWHERE, INSTANTLY USING PAY MONEY SYSTEM', //edited by parvez
             'sub-title' => 'Transfer funds to your friends & family globally through the '. $getCompanyName .' mobile app, bank account or others payment gateway.Funds directly go into your account whether the recipient have any account or not. You can send/request for money via different type of Payment Gateway with different currencies.',
         ],
         'section-d' => [

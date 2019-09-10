@@ -12,8 +12,7 @@ $logo = getCompanyLogoWithoutSession(); //direct query
         class="navbar navbar-expand-lg 
         <?= isset( $menu ) && ( $menu == 'home' ) ? 'navbar-accent': 'navbar-dark bg-primary' ?>">
         <div class="container navbar-container">
-            <a style="width: 192px;overflow: hidden;"  
-                class="navbar-brand" 
+            <a class="navbar-brand" 
                 href="@if (request()->path() != 'merchant/payment') {{ url('/') }} @else {{ '#' }} @endif">
                 <img src="@if (isset( $menu ) && ( $menu == 'home' )) 
                     {{ url('public/images/logos/logo_yellow.png') }} 
@@ -25,7 +24,7 @@ $logo = getCompanyLogoWithoutSession(); //direct query
 
             @if (request()->path() != 'merchant/payment')
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="hamburger-menu"><i class="fas fa-bars"></i></span>
                 </button>
                 <div class="collapse navbar-collapse navbar-toggler-right" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto my-navbar">
@@ -33,7 +32,6 @@ $logo = getCompanyLogoWithoutSession(); //direct query
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'send-money' ) ? 'nav_active': '' ?>"><a href="{{url('/send-money')}}" class="nav-link">@lang('message.home.title-bar.send')</a></li>
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'request-money' ) ? 'nav_active': '' ?>"><a href="{{url('/request-money')}}" class="nav-link">@lang('message.home.title-bar.request')</a></li>
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'about' ) ? 'nav_active': '' ?>"><a href="{{url('/about-us')}}" class="nav-link">@lang('message.home.title-bar.about')</a></li>
-                        <li class="nav-item <?= isset( $menu ) && ( $menu == 'portfolio' ) ? 'nav_active': '' ?>"><a href="{{url('/portfolio')}}" class="nav-link">@lang('message.home.title-bar.portfolio')</a></li>
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'contact' ) ? 'nav_active': '' ?>"><a href="{{url('/contact-us')}}" class="nav-link">@lang('message.home.title-bar.contact')</a></li>
                      @if(!empty($menusHeader))
                         @foreach($menusHeader as $top_navbar)

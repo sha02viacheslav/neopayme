@@ -9,4 +9,5 @@
                 </div>
             </div>
         </div>
+        <img src="{{ url('public/frontend/images/welcome_round_bg.svg') }}" class="round-white-bottom">
     </section>

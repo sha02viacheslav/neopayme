@@ -1,5 +1,6 @@
 <section class="section-home-how">
-    <div class="row overlay-img">
+    <img src="{{ url('public/frontend/images/home-how-top.svg') }}" class="round-white-top">
+    <div class="overlay-img">
         <div class="col-md-6 color-bg">
         </div>
         <div class="col-md-6 image-bg">
