@@ -188,7 +188,7 @@ return [
             'contact'   => 'CONTACT US',
             'developer' => 'Developer',
             'login'     => 'Login',
-            'register'  => 'Register',
+            'register'  => 'Sign Up',
             'logout'    => 'Logout',
             'dashboard' => 'Dashboard',
         ],
@@ -279,7 +279,7 @@ return [
     //end the first
     'request-money'        => [
         'banner'    => [
-            'title'          => 'Request Money From Around The World :br With ' . $getCompanyName,
+            'title'          => 'REQUEST MONEY FROM :br AROUND THE WORLD WITH PAY MONEY',
             'sub-title'      => 'Make a reminder people to send moneyback.',
             'sign-up'        => 'Sign Up To '.$getCompanyName,
             'already-signed' => 'Already signed up?',

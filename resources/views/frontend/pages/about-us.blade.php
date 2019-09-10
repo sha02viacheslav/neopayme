@@ -3,7 +3,6 @@
 
     <!--Start banner Section-->
     <section class="about-welcome-area">
-        <div class="overlay-dark"></div>
         <div class="container">
             <div class="row" style="justify-content: center;">
                 <div class="col-md-10 about-content-box">

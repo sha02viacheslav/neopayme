@@ -1,4 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+@font-face {
+    font-family: 'Helios Regular';
+  
+    src: url('../fonts/helios-regular.eot');
+    src: url('../fonts/helios-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/helios-regular.woff2') format('woff2'), url('../fonts/helios-regular.woff') format('woff'), url('../fonts/helios-regular.ttf') format('truetype'), url('../fonts/helios-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+    font-family: 'GOTHIC';
+  
+    src: url('../fonts/gothic.eot');
+    src: url('../fonts/gothic.eot?#iefix') format('embedded-opentype'), url('../fonts/gothic.woff2') format('woff2'), url('../fonts/gothic.woff') format('woff'), url('../fonts/gothic.ttf') format('truetype'), url('../fonts/gothic.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+    font-family: 'GOTHICB';
+  
+    src: url('../fonts/gothicb.eot');
+    src: url('../fonts/gothicb.eot?#iefix') format('embedded-opentype'), url('../fonts/gothicb.woff2') format('woff2'), url('../fonts/gothicb.woff') format('woff'), url('../fonts/gothicb.ttf') format('truetype'), url('../fonts/gothicb.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+    font-family: 'EurostileLTStd-Ex2';
+  
+    src: url('../fonts/eurostileltstd-ex2.eot');
+    src: url('../fonts/eurostileltstd-ex2.eot?#iefix') format('embedded-opentype'), url('../fonts/eurostileltstd-ex2.woff2') format('woff2'), url('../fonts/eurostileltstd-ex2.woff') format('woff'), url('../fonts/eurostileltstd-ex2.ttf') format('truetype'), url('../fonts/eurostileltstd-ex2.svg#glyphicons_halflingsregular') format('svg');
+}
+
 body {
     font-family: 'Century Gothic';
     font-size: 13pt;
@@ -57,70 +83,13 @@ table tr td:first-child {
     text-align: left;
 }
 
-/*quick contact*/
 
-#quick-contact {
-    margin-top: 0px;
-    float: right;
-}
-
-#quick-contact>ul {
-    margin: 0;
-    padding: 0;
-}
-
-#quick-contact a {
-    color: #ffffff;
-    display: inline-block;
-}
-
-#quick-contact a:hover {
-    color: #ffcc07;
-}
-
-#quick-contact li {
-    clear: inherit;
-    float: left;
-    font-size: 12px;
-    list-style: outside none none;
-    text-align: left;
-    font-weight: 200;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-    margin-right: 15px;
-    padding: 5px 17px 5px 17px;
-    color: #fff;
-    background: #0b2753;
-    border-radius: 28px;
-}
 
 #tophead .section {
     margin: 0;
 }
 /*-----------------header-----------------*/
-@font-face {
-    font-family: 'Helios Regular';
-  
-    src: url('../fonts/helios-regular.eot');
-    src: url('../fonts/helios-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/helios-regular.woff2') format('woff2'), url('../fonts/helios-regular.woff') format('woff'), url('../fonts/helios-regular.ttf') format('truetype'), url('../fonts/helios-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-@font-face {
-    font-family: 'GOTHIC';
-  
-    src: url('../fonts/gothic.eot');
-    src: url('../fonts/gothic.eot?#iefix') format('embedded-opentype'), url('../fonts/gothic.woff2') format('woff2'), url('../fonts/gothic.woff') format('woff'), url('../fonts/gothic.ttf') format('truetype'), url('../fonts/gothic.svg#glyphicons_halflingsregular') format('svg');
-}
-@font-face {
-    font-family: 'GOTHICB';
-  
-    src: url('../fonts/gothicb.eot');
-    src: url('../fonts/gothicb.eot?#iefix') format('embedded-opentype'), url('../fonts/gothicb.woff2') format('woff2'), url('../fonts/gothicb.woff') format('woff'), url('../fonts/gothicb.ttf') format('truetype'), url('../fonts/gothicb.svg#glyphicons_halflingsregular') format('svg');
-}
-@font-face {
-    font-family: 'EurostileLTStd-Ex2';
-  
-    src: url('../fonts/eurostileltstd-ex2.eot');
-    src: url('../fonts/eurostileltstd-ex2.eot?#iefix') format('embedded-opentype'), url('../fonts/eurostileltstd-ex2.woff2') format('woff2'), url('../fonts/eurostileltstd-ex2.woff') format('woff'), url('../fonts/eurostileltstd-ex2.ttf') format('truetype'), url('../fonts/eurostileltstd-ex2.svg#glyphicons_halflingsregular') format('svg');
-}
+
 header {
     z-index: 5;
     width: 100%;
@@ -177,7 +146,7 @@ header a.logo {
 
 
 /*-----------------------welcome section------------------*/
-canvas {
+/* canvas {
     display: block;
     vertical-align: bottom;
 }
@@ -320,7 +289,7 @@ canvas {
     color: #ffffff;
     background: #063241;
     transition: all 0.5s;
-}
+} */
 /*-----------------------welcome section------------------*/
 
 
@@ -333,455 +302,8 @@ canvas {
 
 
 
-/*------------------Section request page -----------------*/
 
-.welcome-area.request-bg {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/4444.png") top center;
-    height: 595px;
-}
 
-.overlay-banner-request {
-    background: rgba(0, 15, 30, 0.4) left;
-    display: block;
-    height: 100%;
-    background-size: cover !important;
-    position: absolute;
-    width: 100%;
-}
-
-.request-page .welcome-text {
-    width: 100%;
-    position: relative;
-    top: 185px;
-    color: #fff;
-}
-
-.request-page .welcome-text h1 {
-    font-size: 38px;
-    color: #fff;
-    font-weight: 400;
-    padding-bottom: 40px;
-    text-transform: capitalize;
-    letter-spacing: 1.5px;
-    text-align: left;
-}
-
-.request-page .welcome-text h2 {
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-    padding-bottom: 50px;
-    text-transform: capitalize;
-    letter-spacing: 1.5px;
-}
-
-.request-page .welcome-text p {
-    padding-top: 50px;
-    color: #fff;
-    font-weight: 400;
-    padding-bottom: 20px;
-    font-size: 16px;
-    text-transform: capitalize;
-}
-
-.request-page .welcome-text .iphone-btn {
-
-    color: #000000;
-    border: 0px solid #d7d7d7;
-    background: #e2e2e2;
-    padding: 15px;
-    transition: all 0.5s;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
-    margin-left: 0px;
-    border-radius: 10px;
-}
-
-.request-page .welcome-text a {
-    color: #ffffff;
-    font-size: 24px;
-    text-decoration: none;
-}
-
-.request-page .welcome-text a:hover {
-    color: #d7d7d7;
-}
-
-.request-page .sec-title h2 {
-    font-size: 38px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.request-page .sec-title p {
-    font-size: 15px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
-.right-bar h2 {
-    font-size: 22px;
-    font-weight: 500;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    text-align: left;
-}
-
-.right-bar p {
-    font-size: 14px;
-    color: #00000;
-}
-
-.right-bar span {
-    background: #0b2753;
-    padding: 10px;
-    color: #ffffff;
-    /* vertical-align: middle; */
-    margin: 0 auto;
-    /* line-height: 30px; */
-    display: inline-block;
-    border-radius: 50%;
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.right-bar span i {
-    font-size: 18px;
-    color: #ffffff;
-}
-
-
-.request-page .laptop-app {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/banner_right.jpg") top center;
-    height: 450px;
-}
-
-
-.request-page .laptop-app h2 {
-    color: #ffffff;
-}
-
-.request-page .laptop-app p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.request-page .download-apps {
-    position: relative;
-    background-size: cover !important;
-    background: #373737;
-    height: 350px;
-}
-
-.request-page .download-apps h2 {
-    color: #ffffff;
-}
-
-.request-page .download-apps p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.request-page .download-apps a {
-    color: #ffffff;
-    text-align: center;
-}
-
-.request-page .download-apps .iphone-btn {
-    margin: 0 auto;
-    color: #ffffff;
-    border: 0px solid #d7d7d7;
-    background: #0b2753;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    transition: all 0.5s;
-     border-radius: 10px;
-}
-
-.request-page .sending-money h2 {
-    text-align: left;
-}
-
-.request-page .sending-money p {
-    text-align: left;
-}
-
-.request-page .sending-money a {
-    color: #13428a;
-    text-decoration: underline;
-}
-
-.padding-60 {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-.laptop-app .sec-title-laptop h2 {
-    font-size: 38px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #ffffff;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.laptop-app .sec-title-laptop p {
-    font-size: 15px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #ffffff;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
-/*------------------Section Send Money page -----------------*/
-
-.welcome-area.send-money-bg {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/corporate-travel.jpg") top center;
-    height: 595px;
-}
-
-.overlay-banner-send {
-    background: rgba(0, 15, 30, 0.4) left;
-    display: block;
-    height: 100%;
-    background-size: cover !important;
-    position: absolute;
-    width: 100%;
-}
-
-.send-money .welcome-text {
-    width: 100%;
-    position: relative;
-    top: 200px;
-    color: #fff;
-}
-
-.send-money .welcome-text h1 {
-    font-size: 38px;
-    color: #fff;
-    font-weight: 400;
-    padding-bottom: 10px;
-    letter-spacing: 0.5px;
-    text-align: left;
-    font-family: 'GOTHICB';
-}
-
-.send-money .welcome-text h2 {
-    font-size: 21px;
-    color: #fff;
-    font-weight: 400;
-    padding-bottom: 50px;
-    letter-spacing: 1.5px;
-}
-
-.send-money .welcome-text p {
-    padding-top: 50px;
-    color: #fff;
-    font-weight: 400;
-    padding-bottom: 20px;
-    font-size: 16px;
-    text-transform: capitalize;
-}
-
-.send-money .welcome-text .iphone-btn {
-
-    color: #000000;
-    border: 0px solid #d7d7d7;
-    background: #e2e2e2;
-    padding: 15px;
-    transition: all 0.5s;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
-    margin-left: 0px;
-     border-radius: 10px;
-}
-
-.send-money .welcome-text .start-btn {
-
-    color: #ffffff;
-    border: 0px solid #13428a;
-    background: #13428a;
-    padding: 15px;
-    transition: all 0.5s;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
-    margin-left: 0px;
-     border-radius: 10px;
-}
-
-.send-money .welcome-text a {
-    color: #ffffff;
-    font-size: 24px;
-
-}
-
-.send-money .welcome-text a:hover {
-    color: #d7d7d7;
-}
-
-.send-money .sec-title h2 {
-    font-size: 38px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.send-money .sec-title p {
-    font-size: 15px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
-.right-bar h2 {
-    font-size: 22px;
-    font-weight: 500;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    text-align: left;
-}
-
-.right-bar p {
-    font-size: 14px;
-    color: #00000;
-}
-
-.right-bar span {
-    background: #0b2753;
-    padding: 10px;
-    color: #ffffff;
-    /* vertical-align: middle; */
-    margin: 0 auto;
-    /* line-height: 30px; */
-    display: inline-block;
-    border-radius: 50%;
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.right-bar span i {
-    font-size: 18px;
-    color: #ffffff;
-}
-
-
-.send-money .mobile-app {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/send-money-banner.jpg") top center;
-    height: 450px;
-}
-
-
-.send-money .mobile-app h2 {
-    color: #ffffff;
-}
-
-.send-money .mobile-app p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.send-money .download-apps {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/ewe.jpg") top center;
-    height: 350px;
-}
-
-.send-money .download-apps h2 {
-    color: #ffffff;
-}
-
-.send-money .download-apps p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.send-money .download-apps a {
-    color: #ffffff;
-    text-align: center;
-}
-
-.send-money .download-apps .iphone-btn {
-    margin: 0 auto;
-    color: #ffffff;
-    border: 0px solid #d7d7d7;
-    background: #0b2753;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    transition: all 0.5s;
-     border-radius: 10px;
-}
-
-.send-money .send-signup-btn {
-    margin: 0 auto;
-    color: #ffffff;
-    border: 0px solid #d7d7d7;
-    background: #0b2753;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    transition: all 0.5s;
-     border-radius: 10px;
-}
-.send-money .sending-money h2 {
-    text-align: left;
-}
-
-.send-money .sending-money p {
-    text-align: left;
-}
-
-.send-money .sending-money a {
-    color: #13428a;
-    text-decoration: underline;
-}
 
 
 
@@ -1011,6 +533,46 @@ canvas {
 .navbar-nav {
     float: right;
     margin: auto;
+}
+/*quick contact*/
+
+#quick-contact {
+    margin-top: 0px;
+    float: right;
+}
+
+#quick-contact>ul {
+    margin: 0;
+    padding: 0;
+}
+
+#quick-contact a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#quick-contact a:hover {
+    color: #ffcc07;
+}
+
+#quick-contact li {
+    clear: inherit;
+    float: left;
+    font-size: 12px;
+    list-style: outside none none;
+    text-align: left;
+    font-weight: 200;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    margin-right: 15px;
+    padding: 5px 17px 5px 17px;
+    color: #fff;
+    background: #F8AE3A;
+    border-radius: 28px;
+}
+.navbar-accent #quick-contact a {
+    color: #463314;
 }
 /*------------------section-home-welcome-----------------*/
 
@@ -1311,7 +873,711 @@ canvas {
 
 
 
-.sec-title h2 {
+
+
+
+
+
+/*------------------section-request-welcome-----------------*/
+.section-request-welcome {
+    position: relative;
+    background-size: cover !important;
+    background: url("../../../public/frontend/banner/4444.png") top center;
+    height: 595px;
+}
+
+.section-request-welcome::after {
+    content: '';
+    background: rgba(0, 0, 0);
+    opacity: 0.69;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px; 
+}
+
+.overlay-banner-request {
+    background: rgba(0, 15, 30, 0.4) left;
+    display: block;
+    height: 100%;
+    background-size: cover !important;
+    position: absolute;
+    width: 100%;
+}
+
+.section-request-welcome .welcome-text {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    top: 110px;
+    color: #fff;
+}
+
+.section-request-welcome .welcome-text h1 {
+    font-size: 35px;
+    color: #fff;
+    font-weight: 400;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.section-request-welcome .welcome-text h2 {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    padding-bottom: 32px;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+}
+
+.section-request-welcome .welcome-text p {
+    padding-top: 32px;
+    color: #fff;
+    font-weight: 400;
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+
+.section-request-welcome .welcome-text .iphone-btn {
+
+    color: #0F0F0F;
+    background: #F8AE3A;
+    padding: 15px 30px;
+    transition: all 0.5s;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 0px;
+    border-radius: 16px;
+}
+
+.section-request-welcome .welcome-text a {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.section-request-welcome .welcome-text a:hover {
+    color: #d7d7d7;
+}
+
+.section-request-welcome .sec-title h2 {
+    font-size: 38px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000000;
+    border-bottom: 0px solid #d7d7d7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-request-welcome .sec-title p {
+    font-size: 15px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000000;
+    border-bottom: 0px solid #d7d7d7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/*------------------section-request-welcome-----------------*/
+
+
+
+
+
+
+
+/*------------------section-request_01-----------------*/
+.section-request_01 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: block;
+    background: #f6f6f6;
+}
+.section-request_01 .sec-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #525252;
+    text-align: center;
+    border-bottom: 0px solid #d7d7d7;
+}
+.section-request_01 .sec-title p {
+    font-size: 18px !important;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #525252;
+    border-bottom: 0px solid #d7d7d7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.section-request_01 .request-process {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.section-request_01 .request-process span {
+    background: #F8AE3A;
+    color: #ffffff;
+    margin: 0 auto;
+    line-height: 87px;
+    display: inline-block;
+    border-radius: 50%;
+    height: 87px;
+    width: 87px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 44px;
+    font-weight: 700;
+}
+.section-request_01 .request-process h2 {
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #525252;
+    text-align: left;
+}
+.section-request_01 .request-process p {
+    font-size: 16px !important;
+    font-weight: 400;
+    color: #525252;
+    text-align: center;
+}
+/*------------------section-request_01-----------------*/
+
+
+
+
+/*------------------section-request_02-----------------*/
+.section-request_02 {
+    position: relative;
+    background-size: cover !important;
+    background: url("../../../public/frontend/images/square_cash_phone.png") top center;
+    height: 800px;
+    padding-top: 80px;
+}
+.section-request_02 .box-with-shape {
+    display: flex;
+
+}
+.section-request_02 .shape-backgound {
+    background-color: #F8AE3A;
+    width: 94px;
+    margin-right: -60px;
+	transform: skew(20deg); 
+}
+.section-request_02 .sec-title-laptop {
+    padding: 10px;
+    max-width: 420px;
+    background-color: #F8AE3A;
+}
+.section-request_02 .sec-title-laptop h2 {
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+    border-bottom: 0px solid #d7d7d7;
+    text-align: right;
+}
+
+.section-request_02 .sec-title-laptop p {
+    font-size: 15px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+    border-bottom: 0px solid #d7d7d7;
+    text-align: right;
+}
+
+/*------------------section-request_02-----------------*/
+
+
+
+
+
+
+/*------------------section-request_03-----------------*/
+.section-request_03 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: block;
+}
+.section-request_03 .sec-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #A5A7A7;
+    text-align: center;
+    border-bottom: 0px solid #d7d7d7;
+}
+.section-request_03 .sec-title p {
+    font-size: 18px !important;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #A5A7A7;
+    border-bottom: 0px solid #d7d7d7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/*------------------section-request_03-----------------*/
+
+
+
+
+
+/*------------------section-request_04-----------------*/
+.section-request_04 {
+    position: relative;
+    background-size: cover !important;
+    background: url("../../../public/frontend/images/request_section04_bg.png") top center;
+    height: 380px;
+}
+.section-request_04::after {
+    content: '';
+    background: rgba(0, 0, 0);
+    opacity: 0.69;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px; 
+}
+/*------------------section-request_04-----------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+.request-page .laptop-app {
+    position: relative;
+    background-size: cover !important;
+    background: url("../../../public/frontend/banner/banner_right.jpg") top center;
+    height: 450px;
+}
+
+
+.request-page .laptop-app h2 {
+    color: #ffffff;
+}
+
+.request-page .laptop-app p {
+    color: #ffffff;
+    font-size: 18px !important;
+}
+
+.request-page .download-apps {
+    position: relative;
+    background-size: cover !important;
+    background: #373737;
+    height: 350px;
+}
+
+.request-page .download-apps h2 {
+    color: #ffffff;
+}
+
+.request-page .download-apps p {
+    color: #ffffff;
+    font-size: 18px !important;
+}
+
+.request-page .download-apps a {
+    color: #ffffff;
+    text-align: center;
+}
+
+.request-page .download-apps .iphone-btn {
+    margin: 0 auto;
+    color: #ffffff;
+    border: 0px solid #d7d7d7;
+    background: #0b2753;
+    padding: 15px;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.5s;
+     border-radius: 10px;
+}
+
+.request-page .sending-money h2 {
+    text-align: left;
+}
+
+.request-page .sending-money p {
+    text-align: left;
+}
+
+.request-page .sending-money a {
+    color: #13428a;
+    text-decoration: underline;
+}
+
+.padding-60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+
+
+/*------------------Section Send Money page -----------------*/
+
+.welcome-area.send-money-bg {
+    position: relative;
+    background-size: cover !important;
+    background: url("../../../public/frontend/banner/corporate-travel.jpg") top center;
+    height: 595px;
+}
+
+.overlay-banner-send {
+    background: rgba(0, 15, 30, 0.4) left;
+    display: block;
+    height: 100%;
+    background-size: cover !important;
+    position: absolute;
+    width: 100%;
+}
+
+.send-money .welcome-text {
+    width: 100%;
+    position: relative;
+    top: 200px;
+    color: #fff;
+}
+
+.send-money .welcome-text h1 {
+    font-size: 38px;
+    color: #fff;
+    font-weight: 400;
+    padding-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    font-family: 'GOTHICB';
+}
+
+.send-money .welcome-text h2 {
+    font-size: 21px;
+    color: #fff;
+    font-weight: 400;
+    padding-bottom: 50px;
+    letter-spacing: 1.5px;
+}
+
+.send-money .welcome-text p {
+    padding-top: 50px;
+    color: #fff;
+    font-weight: 400;
+    padding-bottom: 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.send-money .welcome-text .iphone-btn {
+
+    color: #000000;
+    border: 0px solid #d7d7d7;
+    background: #e2e2e2;
+    padding: 15px;
+    transition: all 0.5s;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-left: 0px;
+     border-radius: 10px;
+}
+
+.send-money .welcome-text .start-btn {
+
+    color: #ffffff;
+    border: 0px solid #13428a;
+    background: #13428a;
+    padding: 15px;
+    transition: all 0.5s;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-left: 0px;
+     border-radius: 10px;
+}
+
+.send-money .welcome-text a {
+    color: #ffffff;
+    font-size: 24px;
+
+}
+
+.send-money .welcome-text a:hover {
+    color: #d7d7d7;
+}
+
+.send-money .sec-title h2 {
+    font-size: 38px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000000;
+    border-bottom: 0px solid #d7d7d7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.send-money .sec-title p {
+    font-size: 15px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000000;
+    border-bottom: 0px solid #d7d7d7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.right-bar h2 {
+    font-size: 22px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000000;
+    text-align: left;
+}
+
+.right-bar p {
+    font-size: 14px;
+    color: #00000;
+}
+
+.right-bar span {
+    background: #0b2753;
+    padding: 10px;
+    color: #ffffff;
+    /* vertical-align: middle; */
+    margin: 0 auto;
+    /* line-height: 30px; */
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.right-bar span i {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+
+.send-money .mobile-app {
+    position: relative;
+    background-size: cover !important;
+    background: url("../../../public/frontend/banner/send-money-banner.jpg") top center;
+    height: 450px;
+}
+
+
+.send-money .mobile-app h2 {
+    color: #ffffff;
+}
+
+.send-money .mobile-app p {
+    color: #ffffff;
+    font-size: 18px !important;
+}
+
+.send-money .download-apps {
+    position: relative;
+    background-size: cover !important;
+    background: url("../../../public/frontend/banner/ewe.jpg") top center;
+    height: 350px;
+}
+
+.send-money .download-apps h2 {
+    color: #ffffff;
+}
+
+.send-money .download-apps p {
+    color: #ffffff;
+    font-size: 18px !important;
+}
+
+.send-money .download-apps a {
+    color: #ffffff;
+    text-align: center;
+}
+
+.send-money .download-apps .iphone-btn {
+    margin: 0 auto;
+    color: #ffffff;
+    border: 0px solid #d7d7d7;
+    background: #0b2753;
+    padding: 15px;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.5s;
+     border-radius: 10px;
+}
+
+.send-money .send-signup-btn {
+    margin: 0 auto;
+    color: #ffffff;
+    border: 0px solid #d7d7d7;
+    background: #0b2753;
+    padding: 15px;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.5s;
+     border-radius: 10px;
+}
+.send-money .sending-money h2 {
+    text-align: left;
+}
+
+.send-money .sending-money p {
+    text-align: left;
+}
+
+.send-money .sending-money a {
+    color: #13428a;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/******************Contact page***************/
+.contact-welcome-area {
+    position: relative;
+    background-size: cover !important;
+    background: url("../images/contact-welcome-img.png") top center;
+    height: 595px;
+}
+
+.contact-list-box {
+    width: 396px;
+    height: 432px;
+    margin: 0px 40px;
+    padding: 40px 30px 30px 50px;
+    border-radius: 20px;
+    position: relative;
+    top: -41px;
+    background: #FFFFFF;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.08),0 2px 4px 0 rgba(0,0,0,.12);
+}
+
+.contact-list-wrap {
+    display: flex;
+    height: 114px;
+    padding-top: 40px;
+    align-items: center;
+}
+
+.contact-list-img {
+    width: 86px !important;
+    display: flex;
+    align-items: center;
+}
+
+.contact-list-wrap p {
+    width: 100%;
+
+}
+.contact-list-box *{
+    font-family: "Century Gothic";
+    font-size: 24px !important;
+    color: #525252;
+    text-align: center;
+    line-height: 30px;
+}
+
+.contact-list-box .contact-location-description {
+    padding-top: 30px
+}
+/******************Contact page***************/
+
+
+
+
+
+/******************About page***************/
+.about-welcome-area {
+    position: relative;
+    height: calc(100vh - 114px);
+    background-size: cover !important;
+    background: url("../images/about-welcome-img.png") top center;
+}
+.about-welcome-area::after {
+    content: '';
+    background: rgba(0, 0, 0);
+    opacity: 0.86;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px; 
+}
+
+.about-content-box {
+    padding-top: 190px;
+}
+
+.about-logo-wrap {
+    display: flex;
+}
+
+.about-text {
+    width: 100%;
+    padding-top: 100px;
+    position: relative;
+    color: #fff;
+}
+
+.about-text h1 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    padding-bottom: 18px;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.about-text h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    padding-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-align: center !important;
+}
+
+
+/******************About page***************/
+
+
+
+
+
+
+/* .sec-title h2 {
     font-size: 24px;
     font-weight: 700;
     padding-top: 10px;
@@ -1355,7 +1621,7 @@ canvas {
     float: left;
     clear: both;
     padding:10px 0;
-}
+} */
 
 
 
@@ -2212,104 +2478,6 @@ padding-bottom: 20px;}
 
 
 
-/******************Contact page***************/
-.contact-welcome-area {
-    position: relative;
-    background-size: cover !important;
-    background: url("../images/contact-welcome-img.png") top center;
-    height: 595px;
-}
-
-.contact-list-box {
-    width: 396px;
-    height: 432px;
-    margin: 0px 40px;
-    padding: 40px 30px 30px 50px;
-    border-radius: 20px;
-    position: relative;
-    top: -41px;
-    background: #FFFFFF;
-    box-shadow: 0 0 4px 0 rgba(0,0,0,.08),0 2px 4px 0 rgba(0,0,0,.12);
-}
-
-.contact-list-wrap {
-    display: flex;
-    height: 114px;
-    padding-top: 40px;
-    align-items: center;
-}
-
-.contact-list-img {
-    width: 86px !important;
-    display: flex;
-    align-items: center;
-}
-
-.contact-list-wrap p {
-    width: 100%;
-
-}
-.contact-list-box *{
-    font-family: "Century Gothic";
-    font-size: 24px !important;
-    color: #525252;
-    text-align: center;
-    line-height: 30px;
-}
-
-.contact-list-box .contact-location-description {
-    padding-top: 30px
-}
-/******************Contact page***************/
-
-
-
-
-
-/******************About page***************/
-.about-welcome-area {
-    position: relative;
-    height: calc(100vh - 114px);
-    background-size: cover !important;
-    background: url("../images/about-welcome-img.png") top center;
-}
-
-.about-content-box {
-    padding-top: 190px;
-}
-
-.about-logo-wrap {
-    display: flex;
-}
-
-.about-text {
-    width: 100%;
-    padding-top: 100px;
-    position: relative;
-    color: #fff;
-}
-
-.about-text h1 {
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
-    padding-bottom: 18px;
-    letter-spacing: 1.5px;
-    text-align: center;
-}
-
-.about-text h3 {
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
-    padding-bottom: 20px;
-    letter-spacing: 1.5px;
-    text-align: center !important;
-}
-
-
-/******************About page***************/
-
 
 .overlay-dark {
     background: rgba(0, 0, 0);
@@ -2320,4 +2488,9 @@ padding-bottom: 20px;}
     background-size: cover !important;
     position: absolute;
     top: 0px;
+}
+
+
+.fill-remaining-space {
+    flex: 1 1 auto;
 }

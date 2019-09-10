@@ -25,7 +25,7 @@
 </head>
 
 
-<body class="send-money request-page">
+<body>
 
     <!-- Start Preloader -->
 {{--     <div class="preloader">
