@@ -54,7 +54,7 @@
 
     <!--Start Section B -->
     <section class="section-send-B">
-        <img src="{{ url('public/frontend/images/home-how-top.svg') }}" class="round-white-top">
+        <img src="{{ url('public/frontend/images/send_B_top.svg') }}" class="round-white-top">
         <div class="send-B1">
             <div class="round-bg">
                 <img src="{{ url('public/frontend/images/section_send_B1.png') }}" 

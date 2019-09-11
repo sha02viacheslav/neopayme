@@ -1,4 +1,5 @@
 <section class="section-home-choose">
+    <img src="{{ url('public/frontend/images/home_choose_top.svg') }}" class="round-white-top">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

@@ -2144,7 +2144,7 @@ padding-bottom: 20px;}
 }
 .round-white-top {
     position: absolute;
-    top: -2px;
+    top: -1px;
     width: calc(100% + 2px);
     height: auto;
     z-index: 10;
