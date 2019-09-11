@@ -14,8 +14,7 @@
     <!---title logo icon-->
     <link rel="javascript" href="{{asset('public/frontend/js/respond.js')}}">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.js"></script>
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.js"></script> -->
 
     <!---favicon-->
     @if (!empty(getfavicon()))

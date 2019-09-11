@@ -66,25 +66,20 @@ table tr td:last-child, table tr th:last-child {
     text-transform: uppercase;
     text-align: center;
 }
-
-table tr td:first-child {
-    /* background: #c3e6f9; */
-}
-
 .card-body label {
     text-align: left !important;
-    /*float: left !important;*/
 }
-
 .form-group {
     text-align: left;
 }
-
-
-
 #tophead .section {
     margin: 0;
 }
+
+
+
+
+
 /*-----------------header-----------------*/
 
 header {
@@ -529,14 +524,6 @@ header a.logo {
     margin-bottom: 10px;
 }
 
-/* .card-header {
-    border-top: 5px solid #0b2854;
-    padding: 20px;
-}
-
-.card-body {
-    padding: 40px;
-} */
 /*----------------- section-home-payment-----------------*/
 
 
@@ -604,14 +591,12 @@ header a.logo {
 
 
 /*------------------section-home-how-----------------*/
-
 .section-home-how {
     position: relative;
     padding-top: 200px;
     padding-bottom: 160px;
     display: block;
 }
-
 .overlay-img {
     height: 100%;
     width: 100%;
@@ -619,13 +604,11 @@ header a.logo {
     position: absolute;
     display: flex;
 }
-
 .section-home-how .overlay-img .image-bg {
     background-size: cover !important;
     background-position: center !important;
     background: url("../../../public/frontend/images/section-home-how.png") top center no-repeat;
 }
-
 .section-home-how .overlay-img .color-bg {
     background-color: #F5A22E;
 }
@@ -686,7 +669,6 @@ header a.logo {
     position: absolute;
     width: 100%;
 }
-
 .section-request-welcome .welcome-text {
     width: 100%;
     max-width: 420px;
@@ -694,7 +676,6 @@ header a.logo {
     top: 110px;
     color: #fff;
 }
-
 .section-request-welcome .welcome-text h1 {
     font-size: 35px;
     color: #fff;
@@ -753,7 +734,6 @@ header a.logo {
     margin-bottom: 20px;
     text-align: center;
 }
-
 .section-request-welcome .sec-title p {
     font-size: 15px;
     font-weight: 400;
@@ -870,7 +850,6 @@ header a.logo {
     border-bottom: 0px solid #d7d7d7;
     text-align: right;
 }
-
 .section-request_02 .sec-title-laptop p {
     font-size: 15px;
     font-weight: 400;
@@ -880,7 +859,6 @@ header a.logo {
     border-bottom: 0px solid #d7d7d7;
     text-align: right;
 }
-
 /*------------------section-request_02-----------------*/
 
 
@@ -944,12 +922,7 @@ header a.logo {
 
 
 
-
-
-
-
 /*------------------section-send-welcome -----------------*/
-
 .section-send-welcome {
     position: relative;
     background-size: cover !important;
@@ -1055,6 +1028,8 @@ header a.logo {
     text-align: center;
 }
 /*------------------section-send-01-----------------*/
+
+
 
 
 
@@ -1198,167 +1173,6 @@ header a.logo {
 
 
 
-.send-money .welcome-text .start-btn {
-
-    color: #ffffff;
-    border: 0px solid #13428a;
-    background: #13428a;
-    padding: 15px;
-    transition: all 0.5s;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
-    margin-left: 0px;
-     border-radius: 10px;
-}
-
-.send-money .welcome-text a {
-    color: #ffffff;
-    font-size: 24px;
-
-}
-
-.send-money .welcome-text a:hover {
-    color: #d7d7d7;
-}
-
-.send-money .sec-title h2 {
-    font-size: 38px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.send-money .sec-title p {
-    font-size: 15px;
-    font-weight: 400;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
-.right-bar h2 {
-    font-size: 22px;
-    font-weight: 500;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #000000;
-    text-align: left;
-}
-
-.right-bar p {
-    font-size: 14px;
-    color: #00000;
-}
-
-.right-bar span {
-    background: #0b2753;
-    padding: 10px;
-    color: #ffffff;
-    /* vertical-align: middle; */
-    margin: 0 auto;
-    /* line-height: 30px; */
-    display: inline-block;
-    border-radius: 50%;
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.right-bar span i {
-    font-size: 18px;
-    color: #ffffff;
-}
-
-
-.send-money .mobile-app {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/send-money-banner.jpg") top center;
-    height: 450px;
-}
-
-
-.send-money .mobile-app h2 {
-    color: #ffffff;
-}
-
-.send-money .mobile-app p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.send-money .download-apps {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/ewe.jpg") top center;
-    height: 350px;
-}
-
-.send-money .download-apps h2 {
-    color: #ffffff;
-}
-
-.send-money .download-apps p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.send-money .download-apps a {
-    color: #ffffff;
-    text-align: center;
-}
-
-.send-money .download-apps .iphone-btn {
-    margin: 0 auto;
-    color: #ffffff;
-    border: 0px solid #d7d7d7;
-    background: #0b2753;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    transition: all 0.5s;
-     border-radius: 10px;
-}
-
-.send-money .send-signup-btn {
-    margin: 0 auto;
-    color: #ffffff;
-    border: 0px solid #d7d7d7;
-    background: #0b2753;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    transition: all 0.5s;
-     border-radius: 10px;
-}
-.send-money .sending-money h2 {
-    text-align: left;
-}
-
-.send-money .sending-money p {
-    text-align: left;
-}
-
-.send-money .sending-money a {
-    color: #13428a;
-    text-decoration: underline;
-}
-
-
-
-
-
 
 /******************Contact page***************/
 .contact-welcome-area {
@@ -1445,7 +1259,6 @@ header a.logo {
     position: relative;
     color: #fff;
 }
-
 .about-text h1 {
     font-size: 24px;
     color: #fff;
@@ -1454,7 +1267,6 @@ header a.logo {
     letter-spacing: 1.5px;
     text-align: center;
 }
-
 .about-text h3 {
     font-size: 14px;
     font-weight: 400;
@@ -1470,67 +1282,6 @@ header a.logo {
 
 
 
-
-
-/* .sec-title h2 {
-    font-size: 24px;
-    font-weight: 700;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #232f69;
-    text-align: left;
-    border-bottom: 0px solid #d7d7d7;
-    margin-bottom: 30px;
-}
-
-.section-01 {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    display: block;
-    background: #f6f6f6;
-}
-
-.section-01 img {}
-
-.buy-online span {
-    background: #063241;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
-    vertical-align: middle;
-    text-align: center;
-    display: inline-block;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 18px;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    float: left;
-    margin-top:-9px;
-}
-
-.buy-online li {
-    display: block;
-    list-style: none;
-    float: left;
-    clear: both;
-    padding:10px 0;
-} */
-
-
-
-
-
-
-
-
-
-/*----------------- section-home-paymentgateway -----------------*/
-
-
-
-/*----------------- section-home-paymentgateway-----------------*/
 
 
 /*-----------------section 04-----------------*/
@@ -1631,7 +1382,7 @@ header a.logo {
 
 
 
-/*------------------contact section-------------*/
+/*------------------footer-contact-section-------------*/
 .contact {
     background: #1A1A1C;
     padding-top: 30px;
@@ -1684,6 +1435,11 @@ header a.logo {
     border: 0px;
     border-radius: 0px;
 }
+/*------------------footer-contact-section-------------*/
+
+
+
+
 /*--------------------------------------------------------------
 Social Links
 --------------------------------------------------------------*/
@@ -2081,7 +1837,6 @@ footer {
 .banner-amount-icon {
     margin-top: 160px;
     display: inline-block;
-    float: left;
     margin-right: 20px;
     font-size: 40px;
     color: #ffffff;
@@ -2090,7 +1845,6 @@ footer {
 .banner-amount {
     margin-top: 160px;
     display: inline-block;
-    float: left;
     color: #ffffff;
 }
 
@@ -2166,8 +1920,6 @@ footer {
     font-weight: 700;
     color: #000000;
 }
-
-.set-Box ul li a {}
 
 .setTop-txt {
     padding-top: 5px;
@@ -2301,9 +2053,7 @@ footer {
     font-size:18px;
     border-radius:2px;
     width:40%;
-   }
-.express-list{}
-.express-list ul{}
+}
 .express-list ul li{ float:left; padding:10px 20px;  }
 .express-list ul li a{ font-size:18px; font-weight:bold; text-align:center;}
 .express-list ul li a.active33{ color: rgba(74, 111, 197, 0.9) !important;
@@ -2326,9 +2076,6 @@ padding-bottom: 20px;}
     }
     .navbar-dark .navbar-nav .nav-link:nth-last-of-type {
         border-bottom: 1px solid #ffffff;
-    }
-    .welcome-area.image-bg {
-        /*height: 300px;*/
     }
     .nav_active {
         border-bottom: 0;
@@ -2385,86 +2132,9 @@ padding-bottom: 20px;}
     top: 0px;
 }
 
-
 .fill-remaining-space {
     flex: 1 1 auto;
 }
-
-
-
-
-
-/* 
-
-.request-page .laptop-app {
-    position: relative;
-    background-size: cover !important;
-    background: url("../../../public/frontend/banner/banner_right.jpg") top center;
-    height: 450px;
-}
-
-
-.request-page .laptop-app h2 {
-    color: #ffffff;
-}
-
-.request-page .laptop-app p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.request-page .download-apps {
-    position: relative;
-    background-size: cover !important;
-    background: #373737;
-    height: 350px;
-}
-
-.request-page .download-apps h2 {
-    color: #ffffff;
-}
-
-.request-page .download-apps p {
-    color: #ffffff;
-    font-size: 18px !important;
-}
-
-.request-page .download-apps a {
-    color: #ffffff;
-    text-align: center;
-}
-
-.request-page .download-apps .iphone-btn {
-    margin: 0 auto;
-    color: #ffffff;
-    border: 0px solid #d7d7d7;
-    background: #0b2753;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    transition: all 0.5s;
-     border-radius: 10px;
-}
-
-.request-page .sending-money h2 {
-    text-align: left;
-}
-
-.request-page .sending-money p {
-    text-align: left;
-}
-
-.request-page .sending-money a {
-    color: #13428a;
-    text-decoration: underline;
-}
-
-.padding-60 {
-    padding-top: 60px;
-    padding-bottom: 60px;
-} */
-
-
 
 .round-white-bottom {
     position: absolute;
