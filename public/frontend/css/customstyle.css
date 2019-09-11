@@ -16,7 +16,7 @@
     font-family: 'GOTHICB';
   
     src: url('../fonts/gothicb.eot');
-    src: url('../fonts/gothicb.eot?#iefix') format('embedded-opentype'), url('../fonts/gothicb.woff2') format('woff2'), url('../fonts/gothicb.woff') format('woff'), url('../fonts/gothicb.ttf') format('truetype'), url('../fonts/gothicb.svg#glyphicons_halflingsregular') format('svg');
+    src: url('../fonts/gothicb.eot?#iefix') format('embedded-opentype'), url('../fonts/gothicb.ttf') format('truetype'), url('../fonts/gothicb.svg#glyphicons_halflingsregular') format('svg');
 }
 @font-face {
     font-family: 'EurostileLTStd-Ex2';
