@@ -23,6 +23,7 @@ class PaymentMethodsTableSeeder extends Seeder
             ['id' => 6, 'name' => 'Bank', 'status' => 'Active'],
             ['id' => 7, 'name' => 'Coinpayments', 'status' => 'Active'],
             ['id' => 8, 'name' => 'Payeer', 'status' => 'Active'],
+            ['id' => 9, 'name' => 'CardConnect', 'status' => 'Active'],
         ]);
     }
 }
