@@ -10,7 +10,7 @@
     font-family: 'GOTHIC';
   
     src: url('../fonts/gothic.eot');
-    src: url('../fonts/gothic.eot?#iefix') format('embedded-opentype'), url('../fonts/gothic.woff2') format('woff2'), url('../fonts/gothic.woff') format('woff'), url('../fonts/gothic.ttf') format('truetype'), url('../fonts/gothic.svg#glyphicons_halflingsregular') format('svg');
+    src: url('../fonts/gothic.eot?#iefix') format('embedded-opentype'), url('../fonts/gothic.ttf') format('truetype'), url('../fonts/gothic.svg#glyphicons_halflingsregular') format('svg');
 }
 @font-face {
     font-family: 'GOTHICB';
@@ -26,7 +26,7 @@
 }
 
 body {
-    font-family: 'Century Gothic';
+    font-family: 'GOTHIC';
     font-size: 13pt;
     font-weight: 400;
 }
@@ -36,6 +36,9 @@ img {
     margin: 0 auto;
     display: inline-block;
     padding: 0px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: 'GOTHICB';
 }
 /* Table design */
 /* ----------------------------------- */
@@ -460,7 +463,7 @@ header a.logo {
 /*------------------section-home-choose-----------------*/
 .section-home-choose {
     position: relative;
-    padding-top: 60px;
+    padding-top: 70px;
     padding-bottom: 60px;
     display: block;
     background-size: cover !important;
@@ -552,12 +555,13 @@ header a.logo {
     font-size: 22px;
     font-weight: bold;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     color: #5B5B5B;
 }
 
 .section-home-service .feature-icon p {
-    font-size: 14px;
+    font-size: 16px !important;
+    line-height: 20px;
     color: #5B5B5B;
 }
 
@@ -752,23 +756,23 @@ header a.logo {
 
 
 
-/*------------------section-request_01-----------------*/
-.section-request_01 {
+/*------------------section-request-01-----------------*/
+.section-request-01 {
     position: relative;
     padding-top: 60px;
     padding-bottom: 60px;
     display: block;
 }
-.section-request_01 .sec-title h2 {
-    font-size: 24px;
-    font-weight: 700;
+.section-request-01 .sec-title h2 {
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: 28px;
+    text-transform: uppercase;
     color: #525252;
     text-align: center;
     border-bottom: 0px solid #d7d7d7;
 }
-.section-request_01 .sec-title p {
+.section-request-01 .sec-title p {
     font-size: 18px !important;
     font-weight: 400;
     line-height: 24px;
@@ -778,12 +782,12 @@ header a.logo {
     border-bottom: 0px solid #d7d7d7;
     text-align: center;
 }
-.section-request_01 .request-process {
+.section-request-01 .request-process {
     align-items: center;
     display: flex;
     flex-direction: column;
 }
-.section-request_01 .request-process span {
+.section-request-01 .request-process span {
     background: #F8AE3A;
     color: #ffffff;
     margin: 0 auto;
@@ -797,21 +801,22 @@ header a.logo {
     font-size: 44px;
     font-weight: 700;
 }
-.section-request_01 .request-process h2 {
+.section-request-01 .request-process h2 {
     font-size: 22px;
     font-weight: 700;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     color: #525252;
     text-align: left;
 }
-.section-request_01 .request-process p {
+.section-request-01 .request-process p {
     font-size: 16px !important;
     font-weight: 400;
     color: #525252;
     text-align: center;
+    line-height: 20px;
 }
-/*------------------section-request_01-----------------*/
+/*------------------section-request-01-----------------*/
 
 
 
@@ -975,24 +980,20 @@ header a.logo {
     display: block;
     position: relative;
 }
-.section-send-01 .sec-title h2 {
-    font-size: 24px;
-    font-weight: 700;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #525252;
-    text-align: center;
-    border-bottom: 0px solid #d7d7d7;
+.section-send-01 .sec-title {
+    display: flex;
+    justify-content: center;
 }
-.section-send-01 .sec-title p {
-    font-size: 18px !important;
-    font-weight: 400;
-    line-height: 24px;
+.section-send-01 .sec-title h2 {
+    max-width: 750px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
     color: #525252;
-    border-bottom: 0px solid #d7d7d7;
     text-align: center;
+    border-bottom: 0px solid #d7d7d7;
 }
 .section-send-01 .send-process {
     align-items: center;
@@ -1017,7 +1018,7 @@ header a.logo {
     font-size: 22px;
     font-weight: 700;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     color: #525252;
     text-align: left;
 }
@@ -1026,6 +1027,7 @@ header a.logo {
     font-weight: 400;
     color: #525252;
     text-align: center;
+    line-height: 20px;
 }
 /*------------------section-send-01-----------------*/
 
