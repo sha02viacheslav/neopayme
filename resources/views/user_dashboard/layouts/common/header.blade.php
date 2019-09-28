@@ -9,11 +9,11 @@ $logo = getCompanyLogoWithoutSession(); //direct query
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary toogleMenuDiv" style="max-height: 63px;">
         <div class="container">
             @if (isset($logo))
-                <a style="height: 45px;width: 157px;overflow: hidden;"  class="navbar-brand" href="{{url('/')}}">
+                <a style="width: 157px;overflow: hidden;"  class="navbar-brand" href="{{url('/')}}">
                     <img src="{{asset('public/images/logos/'.$logo)}}" alt="logo" class="img-responsive img-fluid">
                 </a>
             @else
-                <a style="height: 45px;width: 157px;overflow: hidden;"  class="navbar-brand" href="{{url('/')}}">
+                <a style="width: 157px;overflow: hidden;"  class="navbar-brand" href="{{url('/')}}">
                     <img src="{{ url('public/uploads/userPic/default-logo.jpg') }}" class="img-responsive" width="80" height="50">
                 </a>
             @endif
