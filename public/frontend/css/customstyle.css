@@ -2141,13 +2141,13 @@ padding-bottom: 20px;}
 .round-white-bottom {
     position: absolute;
     bottom: -2px;
-    width: calc(100% + 2px);
+    width: 100%;
     height: auto;
 }
 .round-white-top {
     position: absolute;
     top: -1px;
-    width: calc(100% + 2px);
+    width: 100%;
     height: auto;
     z-index: 10;
 }
