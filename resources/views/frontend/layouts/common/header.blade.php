@@ -7,10 +7,9 @@ $menusHeader = getMenuContent('Header');
 $logo = getCompanyLogoWithoutSession(); //direct query
 ?>
 <header id="js-header-old"
-    class="<?= isset( $menu ) && ( $menu == 'home' ) ? 'sticky-header': '' ?>">
+    class="<?= isset( $menu ) && ( $menu == 'home' ) ? 'home-header': '' ?>">
     <nav id="top-navbar" 
-        class="navbar navbar-expand-lg 
-        <?= isset( $menu ) && ( $menu == 'home' ) ? 'navbar-accent': 'navbar-dark bg-primary' ?>">
+        class="navbar navbar-expand-lg navbar-dark">
         <div class="container navbar-container">
             <a class="navbar-brand" 
                 href="@if (request()->path() != 'merchant/payment') {{ url('/') }} @else {{ '#' }} @endif">
@@ -31,8 +30,8 @@ $logo = getCompanyLogoWithoutSession(); //direct query
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'home' ) ? 'nav_active': '' ?>"><a href="{{url('/')}}" class="nav-link">@lang('message.home.title-bar.home')</a></li>
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'send-money' ) ? 'nav_active': '' ?>"><a href="{{url('/send-money')}}" class="nav-link">@lang('message.home.title-bar.send')</a></li>
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'request-money' ) ? 'nav_active': '' ?>"><a href="{{url('/request-money')}}" class="nav-link">@lang('message.home.title-bar.request')</a></li>
-                        <li class="nav-item <?= isset( $menu ) && ( $menu == 'about' ) ? 'nav_active': '' ?>"><a href="{{url('/about-us')}}" class="nav-link">@lang('message.home.title-bar.about')</a></li>
-                        <li class="nav-item <?= isset( $menu ) && ( $menu == 'contact' ) ? 'nav_active': '' ?>"><a href="{{url('/contact-us')}}" class="nav-link">@lang('message.home.title-bar.contact')</a></li>
+                        <li class="nav-item <?= isset( $menu ) && ( $menu == 'about-us' ) ? 'nav_active': '' ?>"><a href="{{url('/about-us')}}" class="nav-link">@lang('message.home.title-bar.about')</a></li>
+                        <li class="nav-item <?= isset( $menu ) && ( $menu == 'contact-us' ) ? 'nav_active': '' ?>"><a href="{{url('/contact-us')}}" class="nav-link">@lang('message.home.title-bar.contact')</a></li>
                      @if(!empty($menusHeader))
                         @foreach($menusHeader as $top_navbar)
                             <li class="nav-item <?= isset( $menu ) && ( $menu == $top_navbar->url ) ? 'nav_active': '' ?>"><a href="{{url($top_navbar->url)}}" class="nav-link"> {{ $top_navbar->name }}</a></li>
