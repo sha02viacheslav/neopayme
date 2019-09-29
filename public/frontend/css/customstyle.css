@@ -642,7 +642,6 @@ header a.logo {
     position: relative;
     background-size: cover !important;
     background: url("../../../public/frontend/banner/4444.png") top center;
-    height: 595px;
 }
 .section-request-welcome::before {
     content: '';
@@ -663,9 +662,9 @@ header a.logo {
 }
 .section-request-welcome .welcome-text {
     width: 100%;
-    max-width: 420px;
+    max-width: 500px;
     position: relative;
-    top: 110px;
+    padding: 220px 20px 200px 20px;
     color: #fff;
 }
 .section-request-welcome .welcome-text h1 {
@@ -774,6 +773,7 @@ header a.logo {
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
 }
 .section-request-01 .request-process span {
     background: #F8AE3A;
@@ -920,7 +920,6 @@ header a.logo {
     position: relative;
     background-size: cover !important;
     background: url("../../../public/frontend/banner/section_send_welcome.png") top center;
-    height: 768px;
 }
 .section-send-welcome::before {
     content: '';
@@ -934,8 +933,9 @@ header a.logo {
 .section-send-welcome .welcome-text {
     width: 100%;
     position: relative;
-    top: 300px;
-    max-width: 460px;
+    padding-top: 300px;
+    padding-bottom: 260px;
+    max-width: 500px;
     color: #fff;
 }
 
@@ -984,6 +984,7 @@ header a.logo {
     border-bottom: 0px solid #d7d7d7;
 }
 .section-send-01 .send-process {
+    padding-bottom: 30px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -1033,12 +1034,37 @@ header a.logo {
 .section-send-B .send-B2 {
     display: flex;
 }
+.section-send-B .send-B2 {
+    margin-top: -250px;
+}
 .section-send-B .send-B1 div,
 .section-send-B .send-B2 div {
     width: 50%;
 }
+.section-send-B .send-B1 .sec-title-box {
+    padding: 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 160px; 
+}
+.section-send-B .send-B1 .sec-title-box {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 160px; 
+    margin-bottom: 250px;
+}
+.section-send-B .send-B2 .sec-title-box {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 250px;
+}
 .section-send-B .send-B1 .sec-title, 
 .section-send-B .send-B2 .sec-title {
+    width: 100%;
+    padding: 10px;
     max-width: 400px;
 }
 .round-bg img {
@@ -1098,6 +1124,7 @@ header a.logo {
 }
 .login-form {
     max-width: 400px;
+    padding: 0 20px;
 }
 .login-form .card-header {
     background-color: #F6F6F6;
@@ -1118,7 +1145,7 @@ header a.logo {
 
 
 
-/*------------------section-login-----------------*/
+/*------------------section-signup-----------------*/
 .section-signup {
     position: relative;
     background-size: cover !important;
@@ -1143,6 +1170,7 @@ header a.logo {
 }
 .signup-form {
     max-width: 400px;
+    padding: 0 20px;
 }
 .signup-form .card-header {
     background-color: #F6F6F6;
@@ -1158,7 +1186,7 @@ header a.logo {
     transition: all 0.5s;
     border-radius: 2px;
 }
-/*------------------section-login-----------------*/
+/*------------------section-signup-----------------*/
 
 
 
@@ -1174,8 +1202,7 @@ header a.logo {
 
 .contact-list-box {
     width: 396px;
-    height: 432px;
-    margin: 0px 40px;
+    margin: 0px 40px 40px 40px;
     padding: 40px 30px 30px 50px;
     border-radius: 20px;
     position: relative;
@@ -1242,7 +1269,9 @@ header a.logo {
 .about-logo-wrap {
     display: flex;
 }
-
+.about-logo-wrap img {
+    width: 417px;
+}
 .about-text {
     width: 100%;
     padding-top: 100px;

@@ -10,7 +10,7 @@
 
 <section class="section-signup">
         <div style="display: flex; justify-content: flex-end; height: 100%;">
-            <div class="signup-box" style="width: 50%;">
+            <div class="signup-box">
                 <div class="signup-form">
                     <!-- form card signup -->
                     <div class="card" style="border-top: solid 7px #F8AE3A;">

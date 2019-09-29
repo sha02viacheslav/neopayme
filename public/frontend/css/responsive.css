@@ -100,6 +100,37 @@
         padding-top: 90px;
         padding-bottom: 40px;
     }
+    /*------------------section-send-welcome-----------------*/ 
+    .section-send-welcome .welcome-text {
+        padding: 224px 40px 209px 40px;
+    }
+    .section-send-welcome .welcome-text h1 {
+        font-size: 40px;
+    }
+    .section-send-welcome .welcome-text h2 {
+        font-size: 22px;
+    }
+    /*------------------section-send-B-----------------*/ 
+    .section-send-B .send-B1 .sec-title-box {
+        margin-top: 20px; 
+        margin-bottom: 100px
+    }
+    .section-send-B .send-B2 .sec-title-box {
+        margin-top: 100px;
+    }
+    .section-send-B .send-B2 {
+        margin-top: -100px;
+    }
+    /*------------------section-request-welcome-----------------*/ 
+     .section-request-welcome .welcome-text {
+        padding: 180px 40px 160px 40px;
+    }
+    .section-request-welcome .welcome-text h1 {
+        font-size: 30px;
+    }
+    .section-request-welcome .welcome-text h2 {
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -154,9 +185,6 @@
     .auth-menu{
         display: block;
     }
-    .sec-title h2{
-        font-size: 20px !important;
-    }
 
     .send-money .welcome-text .start-btn, .send-money .welcome-text .iphone-btn {
         padding :10px;
@@ -201,6 +229,43 @@
         background: #F5A22ED3;
         border-radius: 10%;
     }
+    /*------------------section-send-welcome-----------------*/ 
+    .section-send-welcome .welcome-text {
+        padding: 170px 30px 150px 30px;
+    }
+    .section-send-welcome .welcome-text h1 {
+        font-size: 30px;
+    }
+    .section-send-welcome .welcome-text h2 {
+        font-size: 18px;
+    }
+    /*------------------section-send-B-----------------*/ 
+    .section-send-B .send-B1 .sec-title-box {
+        margin-top: 30px; 
+        margin-bottom: 30px
+    }
+    .section-send-B .send-B2 .sec-title-box {
+        margin-top: 30px;
+    }
+    .section-send-B .send-B2 {
+        margin-top: -30px;
+    }
+    .section-send-B .sec-title p {
+        display: none;
+    }
+    .section-send-B .sec-title h2 {
+        font-size: 22px;
+    }
+    /*------------------section-request-welcome-----------------*/ 
+    .section-request-welcome .welcome-text {
+        padding: 150px 30px 130px 30px;
+    }
+    .section-request-welcome .welcome-text h1 {
+        font-size: 26px;
+    }
+    .section-request-welcome .welcome-text h2 {
+        font-size: 18px;
+    }
 
 }
 
@@ -227,10 +292,6 @@
     }
     .auth-menu{
         display: block;
-    }
-
-    .sec-title h2{
-        font-size: 20px !important;
     }
 
     .send-money .welcome-text .start-btn, .send-money .welcome-text .iphone-btn {
@@ -271,4 +332,119 @@
     .section-home-service .row div {
         padding: 10px;
     }
+    /*------------------section-send-welcome-----------------*/ 
+    .section-send-welcome .welcome-text {
+        padding: 110px 20px 50px 20px;
+    }
+    .section-send-welcome .welcome-text h1 {
+        font-size: 24px;
+    }
+    .section-send-welcome .welcome-text h2 {
+        font-size: 14px;
+    }
+    /*------------------section-send-B-----------------*/ 
+    .section-send-01 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .section-send-01 .sec-title h2 {
+        font-size: 22px;
+    }
+    /*------------------section-send-B-----------------*/ 
+    .section-send-B .send-B1 .sec-title-box {
+        margin-top: 30px; 
+        margin-bottom: 30px
+    }
+    .section-send-B .send-B2 .sec-title-box {
+        margin-top: 30px;
+    }
+    .section-send-B .send-B2 {
+        margin-top: -30px;
+    }
+    .section-send-B .sec-title p {
+        display: none;
+    }
+    .section-send-B .sec-title h2 {
+        font-size: 16px;
+    }
+    /*------------------section-request-welcome-----------------*/ 
+    .section-request-welcome .welcome-text {
+        padding: 110px 20px 50px 20px;
+    }
+    .section-request-welcome .welcome-text h1 {
+        font-size: 24px;
+    }
+    .section-request-welcome .welcome-text h2 {
+        font-size: 14px;
+    }
+    /*------------------section-request-01-----------------*/ 
+    .section-request-01 .sec-title h2 {
+        font-size: 24px;
+    }
+    /*------------------section-request-02-----------------*/ 
+    .section-request_02 {
+        height: 260px;
+        padding-top: 0px;
+        margin-top: 150px;
+    }
+    .section-request_02 .shape-backgound {
+        display: none;
+    }
+    .section-request_02 .sec-title-laptop {
+        margin-top: -150px;
+    }
+    .section-request_02 .sec-title-laptop h2 {
+        font-size: 15px;
+    }
+    /*------------------section-request-03-----------------*/ 
+    .section-request_03 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    /*------------------about-welcome-area-----------------*/ 
+    .about-welcome-area {
+        height: calc(100vh - 56px) !important;
+    }
+    .about-logo-wrap img {
+        width: 180px;
+    }
+    .about-content-box {
+        padding-top: 60px;
+    }
+    .about-text {
+        padding-top: 30px;
+    }
+    /*------------------contact-welcome-area-----------------*/ 
+    .contact-welcome-area {
+        height: 235px;
+    }
+    .contact-list-box {
+        width: 250px !important;
+        margin: 0px 20px 20px 20px;
+        padding: 20px 10px 20px 10px;
+    }
+    .contact-list-wrap {
+        height: 84px;
+        padding-top: 20px;
+    }
+    .contact-list-img {
+        zoom: 0.7;
+    }
+    .contact-list-box * {
+        font-size: 16px !important;
+    }
+    /*------------------section-login-----------------*/ 
+    .section-login {
+        height: 511px;
+    }
+    .login-box {
+        width: 100%;
+        padding-top: 60px;
+    }
+    /*------------------section-login-----------------*/ 
+    .signup-box {
+        width: 100%;
+        padding-top: 60px;
+    }
+
 }

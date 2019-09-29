@@ -60,15 +60,15 @@
                 <img src="{{ url('public/frontend/images/section_send_B1.png') }}" 
                     class="img-responsive">
             </div>
-            <div style="display: flex; align-items: center; justify-content: center; margin-top: 160px; margin-bottom: 250px;">            
+            <div class="sec-title-box">            
                 <div class="sec-title">
                     <h2>@lang('message.send-money.section-b.title')</h2>
                     <p>@lang('message.send-money.section-b.sub-title')</p>
                 </div>
             </div>
         </div>
-        <div class="send-B2" style="margin-top: -250px;">
-            <div style="display: flex; align-items: center; justify-content: center; margin-top: 250px;">            
+        <div class="send-B2">
+            <div class="sec-title-box">            
                 <div class="sec-title">
                     <h2>@lang('message.send-money.section-c.title')</h2>
                     <p>@lang('message.send-money.section-c.sub-title')</p>

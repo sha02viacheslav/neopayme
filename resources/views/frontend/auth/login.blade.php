@@ -3,7 +3,7 @@
     <!--Start Section-->
     <section class="section-login">
         <div style="display: flex; justify-content: flex-end; height: 100%;">
-            <div class="login-box" style="width: 50%;">
+            <div class="login-box">
                 <div class="login-form">
                     <!-- form card login -->
                     <div class="card" style="border-top: solid 7px #F8AE3A;">
