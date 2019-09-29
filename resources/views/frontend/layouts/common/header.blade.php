@@ -8,8 +8,7 @@ $logo = getCompanyLogoWithoutSession(); //direct query
 ?>
 <header id="js-header-old"
     class="<?= isset( $menu ) && ( $menu == 'home' ) ? 'home-header': '' ?>">
-    <nav id="top-navbar" 
-        class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container navbar-container">
             <a class="navbar-brand" 
                 href="@if (request()->path() != 'merchant/payment') {{ url('/') }} @else {{ '#' }} @endif">

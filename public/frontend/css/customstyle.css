@@ -371,7 +371,6 @@ header a.logo {
     position: relative;
     background-size: cover !important;
     background: url("../images/slider_image.jpg") top center;
-    height: 860px;
 }
 .section-home-welcome::before {
     content: '';
@@ -384,8 +383,7 @@ header a.logo {
 }
 .section-home-welcome .welcome-text {
     width: 100%;
-    padding-top: 400px;
-    padding-left: 80px;
+    padding: 400px 0px 267px 80px;
     color: #fff;
 }
 
@@ -403,7 +401,6 @@ header a.logo {
     font-size: 28px;
     color: #fff;
     font-weight: 400;
-    padding-bottom: 50px;
     letter-spacing: 1.5px;
 }
 /*------------------section-home-welcome-----------------*/
@@ -442,14 +439,6 @@ header a.logo {
     -moz-transition: all 0.4s ease-out 0s;
     -webkit-transition: all 0.4s ease-out 0s;
     transition: all 0.4s ease-out 0s;
-}
-
-@media screen and (max-width: 767px) {
-  
-    .section-home-feature .feature-icon img {
-        width: 90px !important;
-    }
- 
 }
 /*------------------section-home-feature-----------------*/
 
@@ -605,6 +594,7 @@ header a.logo {
     top: 0px;
     position: absolute;
     display: flex;
+    flex-wrap: wrap;
 }
 .section-home-how .overlay-img .image-bg {
     background-size: cover !important;

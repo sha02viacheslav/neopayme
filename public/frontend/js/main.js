@@ -46,7 +46,7 @@
             e.preventDefault();
             var top = paymoneyWindow.scrollTop();
             var scrollTopArea = $("#scroll-top-area");
-            var topNavbar = $("#top-navbar");
+            var topNavbar = $("#js-header-old");
             if (top < 150) {
                 scrollTopArea.css('display', 'none');                    
                 topNavbar.removeClass('highlight-header');                    
