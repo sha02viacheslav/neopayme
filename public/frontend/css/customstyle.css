@@ -250,6 +250,19 @@ header a.logo {
     font-size: 24px;
     border: none;
 }
+.lang-select-wrap {
+    width: 45px;
+}
+.lang-select-wrap .form-control {
+    border: unset;
+    padding: 0px;
+    background-color: unset;
+    color: #F5B72E;
+    text-transform: uppercase;
+}
+.lang-select-wrap .form-control:focus {
+    box-shadow: unset;
+}
 
 /*------------------- Top Header -----------------*/
 

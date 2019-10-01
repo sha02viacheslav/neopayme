@@ -66,6 +66,15 @@ $logo = getCompanyLogoWithoutSession(); //direct query
                     @endif
                 </ul>
             </div>
+            <div class="lang-select-wrap">
+                <form>
+                    <select class="form-control" id="lang">
+                        @foreach (getLanguagesListAtFooterFrontEnd() as $lang)
+                            <option {{ Session::get('dflt_lang') == $lang->short_name ? 'selected' : '' }} value='{{ $lang->short_name }}'> {{ $lang->short_name }}</option>
+                        @endforeach
+                    </select>
+                </form>
+            </div>
         </div>
     </nav>
 </header>
