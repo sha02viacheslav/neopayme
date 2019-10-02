@@ -31,11 +31,11 @@ $logo = getCompanyLogoWithoutSession(); //direct query
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'request-money' ) ? 'nav_active': '' ?>"><a href="{{url('/request-money')}}" class="nav-link">@lang('message.home.title-bar.request')</a></li>
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'about-us' ) ? 'nav_active': '' ?>"><a href="{{url('/about-us')}}" class="nav-link">@lang('message.home.title-bar.about')</a></li>
                         <li class="nav-item <?= isset( $menu ) && ( $menu == 'contact-us' ) ? 'nav_active': '' ?>"><a href="{{url('/contact-us')}}" class="nav-link">@lang('message.home.title-bar.contact')</a></li>
-                     @if(!empty($menusHeader))
-                        @foreach($menusHeader as $top_navbar)
-                            <li class="nav-item <?= isset( $menu ) && ( $menu == $top_navbar->url ) ? 'nav_active': '' ?>"><a href="{{url($top_navbar->url)}}" class="nav-link"> {{ $top_navbar->name }}</a></li>
-                        @endforeach
-                    @endif
+                        @if(!empty($menusHeader))
+                            @foreach($menusHeader as $top_navbar)
+                                <li class="nav-item <?= isset( $menu ) && ( $menu == $top_navbar->url ) ? 'nav_active': '' ?>"><a href="{{url($top_navbar->url)}}" class="nav-link"> {{ $top_navbar->name }}</a></li>
+                            @endforeach
+                        @endif
                         @if( !Auth::check() )
                             <li class="nav-item auth-menu"> <a href="{{url('/login')}}" class="nav-link">@lang('message.home.title-bar.login')</a></li>
                             <li class="nav-item auth-menu"> <a href="{{url('/register')}}" class="nav-link">@lang('message.home.title-bar.register')</a></li>
@@ -43,6 +43,17 @@ $logo = getCompanyLogoWithoutSession(); //direct query
                             <li class="nav-item auth-menu"> <a href="{{url('/dashboard')}}" class="nav-link">@lang('message.home.title-bar.dashboard')</a> </li>
                             <li class="nav-item auth-menu"> <a href="{{url('/logout')}}" class="nav-link">@lang('message.home.title-bar.logout')</a> </li>
                         @endif
+                        <li class="nav-item">
+                            <div class="lang-select-wrap nav-link auth-menu">
+                                <form>
+                                    <select class="form-control" id="lang">
+                                        @foreach (getLanguagesListAtFooterFrontEnd() as $lang)
+                                            <option {{ Session::get('dflt_lang') == $lang->short_name ? 'selected' : '' }} value='{{ $lang->short_name }}'> {{ $lang->short_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </form>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             @endif
@@ -66,7 +77,7 @@ $logo = getCompanyLogoWithoutSession(); //direct query
                     @endif
                 </ul>
             </div>
-            <div class="lang-select-wrap">
+            <div class="lang-select-wrap collapse navbar-collapse">
                 <form>
                     <select class="form-control" id="lang">
                         @foreach (getLanguagesListAtFooterFrontEnd() as $lang)

@@ -63,7 +63,9 @@
     .top-search {
         margin-top: 10px;
     }
-
+    .navbar-brand {
+        flex: 1 1 auto !important;
+    }
     .category .col-md-9,
     .category .col-md-3 {
         -webkit-box-flex: 0;

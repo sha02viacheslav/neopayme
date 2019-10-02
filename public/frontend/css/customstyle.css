@@ -253,6 +253,9 @@ header a.logo {
 .lang-select-wrap {
     width: 45px;
 }
+.my-navbar .lang-select-wrap {
+    width: 100%;
+}
 .lang-select-wrap .form-control {
     border: unset;
     padding: 0px;
@@ -2178,5 +2181,5 @@ padding-bottom: 20px;}
     top: -1px;
     width: 100%;
     height: auto;
-    z-index: 10;
+    z-index: 1;
 }
