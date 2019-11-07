@@ -199,7 +199,7 @@ return [
         PragmaRX\Google2FALaravel\ServiceProvider::class, // need to disable it (if vendor is git ignored)
 
         //Infoamin Installer
-        // Infoamin\\Installer\LaravelInstallerServiceProvider::class,
+        // Infoamin\Installer\LaravelInstallerServiceProvider::class,
         
     ],
 
