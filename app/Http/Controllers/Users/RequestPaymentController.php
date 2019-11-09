@@ -317,7 +317,7 @@ class RequestPaymentController extends Controller
                 }
                 else
                 {
-                    $this->mailToUnRegisteredRequestAcceptor($sessionValue['email'], $RequestPayment->currency->symbol, $sessionValue['amount']);
+                    $this->mailToUnRegisteredRequestAcceptor($sessionValue['email'], $RequestPayment->currency->symbol, $sessionValue['amount'], $RequestPayment->id);
                 }
             }
             elseif ($phoneRegex && $processedBy == "phone")
@@ -334,7 +334,7 @@ class RequestPaymentController extends Controller
                     }
                     else
                     {
-                        $this->mailToUnRegisteredRequestAcceptor($sessionValue['email'], $RequestPayment->currency->symbol, $sessionValue['amount']);
+                        $this->mailToUnRegisteredRequestAcceptor($sessionValue['email'], $RequestPayment->currency->symbol, $sessionValue['amount'], $RequestPayment->id);
                     }
                 }
                 elseif ($phoneRegex)
@@ -412,7 +412,7 @@ class RequestPaymentController extends Controller
         }
     }
 
-    public function mailToUnRegisteredRequestAcceptor($sessionValueEmail, $RequestPaymentCurrencySymbol, $sessionValueAmount)
+    public function mailToUnRegisteredRequestAcceptor($sessionValueEmail, $RequestPaymentCurrencySymbol, $sessionValueAmount, $RequestPaymentId)
     {
         /**
          * Mail to unregistered user when request created
@@ -424,7 +424,8 @@ class RequestPaymentController extends Controller
         $subject     = 'Notice of Request Creation!';
         $message     = 'Hi ' . $unregisteredUserNameFromEmail . ',<br><br>';
         $message .= 'You have got ' . moneyFormat($RequestPaymentCurrencySymbol, formatNumber($sessionValueAmount)) . ' payment request from ' . Auth::user()->email . '.<br>';
-        $message .= 'To accept the request, please register on : ' . url('/register') . ' with current email.<br><br>';
+        $message .= 'To accept the request, please go here : ' . url('/outpayment/form?id='.$RequestPaymentId) . ' and confirm payment.<br><br>';
+        $message .= 'To make account, please register on : ' . url('/register') . ' with current email.<br><br>';
         $message .= 'Regards,<br>';
         $message .= $profileName;
 

@@ -659,3 +659,13 @@ Route::group(['middleware' => ['guest:users']], function ()
 
 Route::get('download/package', 'ContentController@downloadPackage');
 Route::get('{url}', 'ContentController@pageDetail');
+
+/* Unregistered User Payment Start*/
+Route::match(array('GET', 'POST'), 'outpayment/form', 'OutPaymentController@index');
+Route::get('outpayment/success', 'OutPaymentController@success');
+Route::get('outpayment/fail', 'OutPaymentController@fail');
+
+//Cardconnect
+Route::post('outpayment/cardconnect', 'OutPaymentController@cardconnect');
+Route::post('outpayment/cardconnect_payment_store', 'OutPaymentController@cardconnectPaymentStore');
+/* Unregistered User Payment Start*/
