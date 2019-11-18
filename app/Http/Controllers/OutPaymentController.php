@@ -173,7 +173,7 @@ class OutPaymentController extends Controller
             $public_key            = $methodData->public_key;
 
             // Site's REST URL
-            $url = 'https://fts.cardconnect.com:6443/cardconnect/rest/';
+            $url = 'https://fts-uat.cardconnect.com/cardconnect/rest/';
 
             $public_key = 'Basic {'.$public_key.'}';
             $client = new \App\libraries\CardConnectRestClient($url, $public_key);
