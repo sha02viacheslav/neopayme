@@ -10,4 +10,5 @@ This project was generated with [PayMoney - Secure Online Payment Gateway](https
 3. Composer install
 4. For initial installation check **config/app.php** and activate this line
 **//Infoamin\Installer\LaravelInstallerServiceProvider::class**
+4. Verify Envato Purchase Code: f2ba9b98-0d7d-470e-bbc4-c9779c80cfb9
 
